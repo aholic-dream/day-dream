@@ -5,6 +5,6 @@ import ReactDom from 'react-dom';
 import './main.less'
 
 ReactDom.render(
-	<h1>hello world!</h1>,
+	<h1>oh shit!</h1>,
 	document.getElementById('root')
 );

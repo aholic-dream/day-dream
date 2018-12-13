@@ -4,25 +4,29 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const paths = {
-  DIST: path.resolve(__dirname, 'dist'),
-  APP: path.resolve(__dirname, 'src/app'),
-  SRC: path.resolve(__dirname, 'src')
+  DIST: path.resolve(__dirname, '..','dist'),
+  APP: path.resolve(__dirname, '..','app'),
+  SRC: path.resolve(__dirname, '..','src')
+ 
 }
-
 let config = {
   entry: {
     app: paths.APP
-  },
+  },  
   output: {
     path: paths.DIST,
     filename: 'app.bundle.js'
   },
+  resolve: {
+    //拓展不需要加后缀的文件类型
+    extensions: ['.js', '.vue', '.json'],
+    //文件夹别名
+    alias: {
+      '@': 'src'
+    }
+  },
   module: {
     rules: [
-      {
-        test: /\.less$/,
-        use: ['style-loader', 'css-loader', "less-loader" ]
-      },
       {
         test: /\.(png|svg|jpg|gif)$/,
         use: ['url-loader']
@@ -45,23 +49,8 @@ let config = {
     new HtmlWebpackPlugin({
       title: 'swk',
       template: './index.html'
-    }),
-    new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin()
+    })
   ],
-  devServer: {
-    contentBase: [path.join(__dirname, 'dist'), path.join(__dirname, 'src/static')],
-    hot: true,
-    compress: false,
-    port: 8080,
-    // 浏览器仅显示警告和错误
-    overlay: {
-      warnings: true,
-      errors: true
-    },
-    quiet: true,
-    clientLogLevel: "error"
-  },
   stats: "errors-only"
 }
 
