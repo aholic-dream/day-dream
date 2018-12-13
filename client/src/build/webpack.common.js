@@ -45,13 +45,9 @@ let config = {
     ]
   },
 	plugins: [
-    new CleanWebpackPlugin(['dist']),
-    new HtmlWebpackPlugin({
-      title: 'swk',
-      template: './index.html'
-    })
+    
   ],
-  stats: "errors-only"
+  target:"web",
 }
 
 module.exports = config
