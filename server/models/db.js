@@ -1,7 +1,7 @@
 const config = require('../config/dev')
 const mongoose = require('mongoose')
 
-mongoose.connect(config.db, { useNewUrlParser: true } )
+mongoose.connect(config.db_pro, { useNewUrlParser: true } )
 
 mongoose.connection.on('connected', () => {
   console.log('MongoDB connected success')
