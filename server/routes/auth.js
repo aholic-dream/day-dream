@@ -1,7 +1,11 @@
 const router = require('koa-router')()
 const UserController = require('../controllers').User
 
-router.prefix('/auth')
+/**
+ * @param NoToken
+ * */
+
+ router.prefix('/auth')
 
 /**
  * 登录
@@ -13,7 +17,7 @@ router.post('/signin', async (ctx, next) => {
 })
 
 /**
- * 登录
+ * 注册
  * @param loginname
  * @param pass
  * @param rePass

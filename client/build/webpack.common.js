@@ -15,11 +15,12 @@ let config = {
   },  
   output: {
     path: paths.DIST,
+    chunkFilename: '[name].bundle.js',
     filename: 'app.bundle.js'
   },
   resolve: {
     //拓展不需要加后缀的文件类型
-    extensions: ['.js', '.vue', '.json'],
+    extensions: ['.js', '.json','jsx'],
     //文件夹别名
     alias: {
       '@': 'src'
@@ -45,13 +46,9 @@ let config = {
     ]
   },
 	plugins: [
-    new CleanWebpackPlugin(['dist']),
-    new HtmlWebpackPlugin({
-      title: 'swk',
-      template: './index.html'
-    })
+    
   ],
-  stats: "errors-only"
+  target:"web",
 }
 
 module.exports = config

@@ -1,10 +1,10 @@
 // src/index.js
 import React from 'react';
 import ReactDom from 'react-dom';
-
+import App from './src/pages/App.jsx';
 import './main.less'
 
 ReactDom.render(
-	<h1>oh shit!</h1>,
+	<App />,
 	document.getElementById('root')
 );

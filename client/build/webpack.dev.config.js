@@ -1,5 +1,6 @@
 //实时重新加载(live reloading)或热模块替换(hot module replacement)能力的 source map 和 localhost serverconst path = require('path')
 const path = require('path')
+const WebpackBar = require('webpackbar');
 const webpack = require('webpack')
 const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -7,12 +8,10 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const common = require('./webpack.common.js');
 
 const paths = {
-  DIST: path.resolve(__dirname, '..','dist'),
-  APP: path.resolve(__dirname, '..','app'),
+  DIST: path.resolve(__dirname, 'dist'),
+  APP: path.resolve(__dirname, 'app'),
   SRC: path.resolve(__dirname, )
- 
 }
-
 let config = {
   mode: 'development',
   devtool: 'inline-source-map',
@@ -38,8 +37,16 @@ let config = {
     ]
   },
 	plugins: [
+    new HtmlWebpackPlugin({
+      title: 'generator',
+      template: './index.html',
+    }),
+    new CleanWebpackPlugin(['dist']),
     new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new WebpackBar({
+      name:'dev-server'
+    })
   ],
   devServer: {
     contentBase: [path.join(__dirname, 'dist'), path.join(__dirname, 'src/static')],
@@ -54,7 +61,8 @@ let config = {
     },
     quiet: true,
     clientLogLevel: "error"
-  }
+  },
+  stats:"minimal"
 }
 
 
