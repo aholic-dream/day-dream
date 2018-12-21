@@ -8,12 +8,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const common = require('./webpack.common.js');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
-const paths = {
-  DIST: path.resolve(__dirname, '..','dist'),
-  APP: path.resolve(__dirname, '..','app'),
-  SRC: path.resolve(__dirname, '..','src')
- 
-}
+
 
 let config = {
   mode: 'production',
@@ -23,34 +18,36 @@ let config = {
         test: /\.(css|less)$/,
         //可以继续优化
         //
-        //
-        //
-        //css 分割
-        use:  ExtractTextPlugin.extract({
+        //css 文件大于250kb 在考虑
+        //css 分割 css-split-webpack-plugin'
+        use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: ['style-loader', 'css-loader', 'postcss-loader',"less-loader" ]
+          //如果需要，可以在 sass-loader 之前将 resolve-url-loader 链接进来
+          use: ['css-loader', 'postcss-loader','less-loader']
         })
       }
     ]
   },
 	plugins: [
-    new UglifyJSPlugin({
-      cache: true,
-      parallel: true
+    new HtmlWebpackPlugin({
+      title: 'generator',
+      template: './index.html',
+      minify: true
     }),
-    new ExtractTextPlugin("styles.css")
+    new UglifyJSPlugin(),
+    new ExtractTextPlugin({
+      filename:"styles.css",
+      allChunks:true
+    })
   ],
+  performance: {
+    maxEntrypointSize: 400000,
+    maxAssetSize: 250000
+  },
   optimization: {
-    splitChunks: {
-      cacheGroups: {
-        commons: {
-          test: /[\\/]node_modules[\\/]/,
-          name: 'vendor',
-          chunks: 'all'
-        }
-      }
-    }
-  }
+    
+  },
+  stats:"errors-only"
 }
 
 
