@@ -1,4 +1,11 @@
 
+
+### 运行        
+> yarn
+> yarn dev
+> http://localhost:3000
+
+
 ## 后端代码目录
 
 ```sh
