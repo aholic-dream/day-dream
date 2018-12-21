@@ -1,13 +1,18 @@
 const Koa = require('koa')
 const app = new Koa()
-const views = require('koa-views')
 const json = require('koa-json')
 const onerror = require('koa-onerror')
 const bodyparser = require('koa-bodyparser')
 const logger = require('koa-logger')
+const db = require('./models/db')
+
+const jwt = require('koa-jwt')
+const checkAuthError = require('./middlewares/checkAuth').checkAuthError
+const setUserState = require('./middlewares/checkToken').setUserState
 
 const index = require('./routes/index')
 const users = require('./routes/users')
+const auth = require('./routes/auth')
 
 // error handler
 onerror(app)
@@ -18,11 +23,6 @@ app.use(bodyparser({
 }))
 app.use(json())
 app.use(logger())
-app.use(require('koa-static')(__dirname + '/public'))
-
-app.use(views(__dirname + '/views', {
-  extension: 'pug'
-}))
 
 // logger
 app.use(async (ctx, next) => {
@@ -32,9 +32,17 @@ app.use(async (ctx, next) => {
   console.log(`${ctx.method} ${ctx.url} - ${ms}ms`)
 })
 
+app.context.secret = 'v6UQx8xqUfRTvpfGcWSKCcT4sLMUnjhR4g9ngbW2ZGJdo5pbyxA8aaeawuPsy'
+app.use(checkAuthError)
+app.use(jwt({ secret: app.context.secret }).unless({ path: [/^\/auth/] }))
+
+// 设置用户
+app.use(setUserState)
+
 // routes
 app.use(index.routes(), index.allowedMethods())
 app.use(users.routes(), users.allowedMethods())
+app.use(auth.routes(), auth.allowedMethods())
 
 // error-handling
 app.on('error', (err, ctx) => {

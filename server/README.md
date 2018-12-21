@@ -1,4 +1,3 @@
-# 分层设计
 
 ## 后端代码目录
 
@@ -18,8 +17,8 @@
     │   ├── home.js
     │   ├── index.js
     │   └── work.js
-    ├── services # 业务层 实现数据层model到操作层controller的耦合封装
-    │   └── user-info.js
+    └── middlewares # 中间件
+    │   ├── auth.js
     └── views # 服务端模板代码
         ├── admin.ejs
         ├── error.ejs
