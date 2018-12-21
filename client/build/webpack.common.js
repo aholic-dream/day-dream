@@ -23,7 +23,7 @@ let config = {
     extensions: ['.js', '.json','jsx'],
     //文件夹别名
     alias: {
-      '@': 'src'
+      '@': './src'
     }
   },
   module: {

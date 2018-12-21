@@ -17,12 +17,11 @@ let config = {
       {
         test: /\.(css|less)$/,
         //可以继续优化
-        //
+        // TODO:
         //css 文件大于250kb 在考虑
         //css 分割 css-split-webpack-plugin'
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          //如果需要，可以在 sass-loader 之前将 resolve-url-loader 链接进来
           use: ['css-loader', 'postcss-loader','less-loader']
         })
       }
