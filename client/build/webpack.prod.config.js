@@ -8,12 +8,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const common = require('./webpack.common.js');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
-const paths = {
-  DIST: path.resolve(__dirname, '..','dist'),
-  APP: path.resolve(__dirname, '..','app'),
-  SRC: path.resolve(__dirname, '..','src')
- 
-}
+
 
 let config = {
   mode: 'production',

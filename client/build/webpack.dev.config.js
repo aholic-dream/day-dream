@@ -8,12 +8,10 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const common = require('./webpack.common.js');
 
 const paths = {
-  DIST: path.resolve(__dirname, '..','dist'),
-  APP: path.resolve(__dirname, '..','app'),
+  DIST: path.resolve(__dirname, 'dist'),
+  APP: path.resolve(__dirname, 'app'),
   SRC: path.resolve(__dirname, )
- 
 }
-
 let config = {
   mode: 'development',
   devtool: 'inline-source-map',
