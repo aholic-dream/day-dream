@@ -25,7 +25,9 @@ let config = {
             loader: 'css-loader',
             options: { 
               //css-loader中importLoaders选项的作用是用于配置css-loader作用于 @import 的资源之前需要经过其他loader的个数
-              importLoaders: 2 
+              importLoaders: 2,
+              modules: true,
+              localIdentName: '[local]--[path][name]_[hash:base64:5]'
             }
           },{
             loader: 'postcss-loader',
@@ -41,7 +43,7 @@ let config = {
       title: 'generator',
       template: './index.html',
     }),
-    new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin(['../dist']),
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new WebpackBar({
@@ -53,7 +55,7 @@ let config = {
     hot: true,
     compress: false,
     port: 8080,
-    open:true,
+    open: false,
     // 浏览器仅显示警告和错误
     overlay: {
       warnings: true,
