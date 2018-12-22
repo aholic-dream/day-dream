@@ -15,7 +15,7 @@ class App extends React.Component{
     this.setState({isLogin:!this.state.isLogin})
   }
   render(){
-    let el = (this.state.isLogin)?<Content/>: import('./Login.jsx').then();
+    let el = (this.state.isLogin)?<Content/>: <Login/>;
     return <div onClick={this.changeLoginState}>{el}</div>
   }
 }

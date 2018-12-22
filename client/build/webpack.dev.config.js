@@ -25,7 +25,9 @@ let config = {
             loader: 'css-loader',
             options: { 
               //css-loader中importLoaders选项的作用是用于配置css-loader作用于 @import 的资源之前需要经过其他loader的个数
-              importLoaders: 2 
+              importLoaders: 2,
+              modules:true,
+              localIdentName: '[path][name]__[local]--[hash:base64:5]'
             }
           },{
             loader: 'postcss-loader',
