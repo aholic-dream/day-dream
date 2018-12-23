@@ -14,9 +14,11 @@ class Sidebar extends Component {
           <div className={Style.logo}>
             <p>Everything For Daily Life</p>
           </div>
-
           <nav className={Style.side_nav}>
-            <Link to='/blog'>Blog</Link>
+            <Link to="/blog/">Blog</Link>
+            <Link to="/users/">Users</Link>
+            <Link to="/todo/">ToDo</Link>
+            <Link to="/users/">Users</Link>
           </nav>
         </div>
         <div className={Style.side_bottom}>
