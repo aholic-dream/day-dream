@@ -4,7 +4,7 @@ import Router from '../../routes/index'
 
 import Content from '../../components/Content/index.jsx'
 import Sidebar from '../../components/Sidebar/index.jsx'
-
+import Button from '../../components/button/Button.jsx'
 class App extends Component {
   constructor (props) {
     super(props)
@@ -13,7 +13,9 @@ class App extends Component {
   render () {
     return <div className={Style.contianer}>
       <Sidebar></Sidebar>
-      <Content></Content>
+      <Content>
+      </Content>
+      <Button type= 'dashed'>2333</Button>
     </div>
   }
 }

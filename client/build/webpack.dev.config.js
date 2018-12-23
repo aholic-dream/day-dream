@@ -14,7 +14,7 @@ const paths = {
 }
 let config = {
   mode: 'development',
-  devtool: 'inline-source-map',
+  devtool: 'source-map',
   module: {
     rules: [
       {
@@ -55,7 +55,7 @@ let config = {
     hot: true,
     compress: false,
     port: 8080,
-    open: false,
+    open: true,
     // 浏览器仅显示警告和错误
     overlay: {
       warnings: true,
