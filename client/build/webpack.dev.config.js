@@ -37,7 +37,7 @@ let config = {
     new HtmlWebpackPlugin({
       title: 'generator',
       template: './index.html',
-      favicon:'./src/assets/favicon.ico'
+      favicon:'./favicon.ico'
     }),
     new CleanWebpackPlugin(['../dist']),
     new webpack.NamedModulesPlugin(),
