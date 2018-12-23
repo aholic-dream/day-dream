@@ -7,11 +7,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const common = require('./webpack.common.js');
 
-const paths = {
-  DIST: path.resolve(__dirname, 'dist'),
-  APP: path.resolve(__dirname, 'app'),
-  SRC: path.resolve(__dirname, )
-}
 let config = {
   mode: 'development',
   devtool: 'source-map',
@@ -51,7 +46,8 @@ let config = {
     })
   ],
   devServer: {
-    contentBase: [path.join(__dirname, 'dist'), path.join(__dirname, 'src/static')],
+    contentBase: [path.join(__dirname, 'dist')],
+    historyApiFallback: true,
     hot: true,
     compress: false,
     port: 8080,

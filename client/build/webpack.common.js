@@ -16,6 +16,7 @@ let config = {
   output: {
     path: paths.DIST,
     chunkFilename: '[name].bundle.js',
+    publicPath: '/',
     filename: 'app.bundle.js'
   },
   resolve: {
