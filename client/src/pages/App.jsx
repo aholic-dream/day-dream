@@ -1,27 +1,16 @@
 import React,{Component} from 'react'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-
+import Style from './App.less'
 
 import Content from '../components/Content/Content.jsx'
 import Sidebar from '../components/Sidebar/Sidebar.jsx'
 import Button from '../components/button/Button.jsx'
-import SideBar from './SideBar.jsx'
-
-const Index = () => <h2>Home</h2>;
-const About = () => <h2>About</h2>;
-const Blog = () => <h2>Blog</h2>;
-const Users = () => <h2>Users</h2>;
-const ToDo = () => <h2>ToDo</h2>;
-
+console.log(Style)
 const App = () => (
   <Router>
-    <div style={{display:"flex"}}>
-      <SideBar></SideBar>
-      <Route path="/" exact component={Index} />
-      <Route path="/about/" component={About} />
-      <Route path="/users/" component={Users} />
-      <Route path="/todo/" component={ToDo} />
-      <Route path="/blog/" component={Blog} />
+    <div className={Style.container}>
+      <Sidebar></Sidebar>
+      <Content></Content>
     </div>
   </Router>
 );
