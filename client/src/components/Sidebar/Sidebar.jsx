@@ -15,10 +15,10 @@ class Sidebar extends Component {
             <p>Everything For Daily Life</p>
           </div>
           <nav className={Style.side_nav}>
-            <Link to="/blog/">Blog</Link>
-            <Link to="/users/">Users</Link>
-            <Link to="/todo/">ToDo</Link>
-            <Link to="/users/">Users</Link>
+            <Link to="/">Blog</Link>
+            <Link to="/users">Users</Link>
+            <Link to="/todo">ToDo</Link>
+            <Link to="/users">Users</Link>
           </nav>
         </div>
         <div className={Style.side_bottom}>

@@ -4,7 +4,7 @@ import ContentHeader from './Header/Header.jsx'
 import ContentMain from './Main/Main.jsx'
 import Style from './Content.less'
 
-import Button from '../button/Button.jsx'
+import Button from '../UI/Button/Button.jsx'
 
 class Content extends Component {
   constructor (props) {
