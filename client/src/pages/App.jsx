@@ -5,14 +5,12 @@ import Style from './App.less'
 import Content from '../components/Content/Content.jsx'
 import Sidebar from '../components/Sidebar/Sidebar.jsx'
 import Button from '../components/button/Button.jsx'
-console.log(Style)
+
 const App = () => (
-  <Router>
-    <div className={Style.container}>
-      <Sidebar></Sidebar>
-      <Content></Content>
-    </div>
-  </Router>
+  <div className={Style.container}>
+    <Sidebar></Sidebar>
+    <Content></Content>
+  </div>
 );
 
 export default App;

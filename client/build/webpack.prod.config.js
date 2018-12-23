@@ -44,6 +44,7 @@ let config = {
     maxEntrypointSize: 400000,
     maxAssetSize: 250000
   },
+  // TODO: 需优化！！
   optimization: {
     
   },
