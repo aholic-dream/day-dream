@@ -42,6 +42,7 @@ let config = {
     new HtmlWebpackPlugin({
       title: 'generator',
       template: './index.html',
+      favicon:'./src/assets/favicon.ico'
     }),
     new CleanWebpackPlugin(['../dist']),
     new webpack.NamedModulesPlugin(),
@@ -51,7 +52,7 @@ let config = {
     })
   ],
   devServer: {
-    contentBase: [path.join(__dirname, 'dist'), path.join(__dirname, 'src/static')],
+    contentBase: [path.join(__dirname, 'dist')],
     hot: true,
     compress: false,
     port: 8080,

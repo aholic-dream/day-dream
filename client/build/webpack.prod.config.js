@@ -32,6 +32,7 @@ let config = {
     new HtmlWebpackPlugin({
       title: 'generator',
       template: './index.html',
+      favicon:'./src/assets/favicon.ico',
       minify: true
     }),
     new UglifyJSPlugin(),
