@@ -1,8 +1,9 @@
 import React, {Component} from 'react'
 import { Router, Route, Link } from 'react-router'
 import Style from './Header.less'
-import Button from '../../button/Button.jsx'
-class ContentHeader extends Component {
+import Button from '../../UI/Button/Button.jsx'
+
+class Header extends Component {
   constructor (props) {
     super(props)
   }
@@ -20,4 +21,4 @@ class ContentHeader extends Component {
   }
 }
 
-export default ContentHeader
+export default Header
