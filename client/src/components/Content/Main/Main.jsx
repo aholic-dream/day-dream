@@ -1,9 +1,9 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Link, IndexRoute} from 'react-router-dom'
 import Style from './Main.less'
+import Button from '../../UI/Button/Button.jsx'
 
-
-const Index = () => <h2>Home</h2>;
+const Index = () => <Button>Home</Button>;
 const About = () => <h2>About</h2>;
 const Blog = () => <h2>Blog</h2>;
 const Users = () => <h2>Users</h2>;
