@@ -1,14 +1,20 @@
-import React, {Component} from 'react'
-import { Router, Route, Link } from 'react-router'
+import React from 'react'
+import { BrowserRouter, Route, Link } from 'react-router-dom'
 
-// React.render((
-//   <Router>
-//       <Route path='/' component={App}>
-//         <Route path='/blog' component></Route>
-//         <Route path='/todo'></Route>
-//         <Route path='/development'></Route>
-//         <Route path='/setting'></Route>
-//       </Route>
+const Blog = () => import('../pages/Blog/index.jsx')
+const App = () => import('../pages/App/index.jsx')
 
-//   </Router>
-// ), document.body)
+const Router = () => {
+  return (
+    <BrowserRouter>
+      <Route component={App}>
+        <Route path='/blog' component={Blog} />
+      </Route>
+      {/* <Route path='/todo' component={Todo} /> */}
+      {/* <Route path='/development' component={Development} /> */}
+      {/* <Route path='/setting' component={Setting} /> */}
+    </BrowserRouter>
+  )
+}
+
+export default Router

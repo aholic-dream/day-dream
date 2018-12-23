@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import Style from './button_style.less'
 // class Button extends React.Component{
 //   constructor(props){
@@ -36,4 +36,5 @@ const Button = (props)=>{
   }
   return el
 }
-export default Button;
+
+export default Button

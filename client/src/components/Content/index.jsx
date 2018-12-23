@@ -4,6 +4,7 @@ import ContentHeader from './ContentHeader/index.jsx'
 import ContentMain from './ContentMain/index.jsx'
 import Style from './index.less'
 
+import Button from '../../components/button/Button.jsx'
 class Content extends Component {
   constructor (props) {
     super(props)
@@ -12,9 +13,9 @@ class Content extends Component {
   render () {
     return <main className={Style.ContentContainer}>
       <ContentHeader></ContentHeader>
-      <ContentMain>
-      </ContentMain>
-      {this.props.children}
+      <ContentMain></ContentMain>
+      <Button type= 'dashed'>2333</Button>
+
     </main>
   }
 }
