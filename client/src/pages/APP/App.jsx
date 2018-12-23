@@ -1,10 +1,9 @@
 import React, {Component} from 'react'
-import { Router, Route, Link } from 'react-router'
 import Style from './App.less'
+import Router from '../../routes/index'
 
-
-import Content from '../Content/index.jsx'
-import Sidebar from '../Sidebar/index.jsx'
+import Content from '../../components/Content/index.jsx'
+import Sidebar from '../../components/Sidebar/index.jsx'
 
 class App extends Component {
   constructor (props) {
@@ -18,5 +17,6 @@ class App extends Component {
     </div>
   }
 }
+
 
 export default App

@@ -1,22 +1,20 @@
 import React, {Component} from 'react'
 import { Router, Route, Link } from 'react-router'
-import styles from './index.less'
+import Style from './index.less'
 
-console.log(styles)
 class Header extends Component {
   constructor (props) {
     super(props)
   }
 
   render () {
-    return <header className={styles.side_container}>
-      <div className={styles.side_top}>
-        <div className={styles.logo}>
+    return <header className={Style.side_container}>
+      <div className={Style.side_top}>
+        <div className={Style.logo}>
           <p>Everything For Daily Life</p>
         </div>
 
-        <nav className={styles.side_nav}>
-
+        <nav className={Style.side_nav}>
           <a href="">Blog</a>
           <a href="">ToDO</a>
           <a href="">开发</a>
@@ -24,8 +22,8 @@ class Header extends Component {
         </nav>
 
       </div>
-      <div className={styles.side_bottom}>
-        <div className={styles.login}>
+      <div className={Style.side_bottom}>
+        <div className={Style.login}>
           <button>Welcome To Daily Dream</button>
         </div>
       </div>
