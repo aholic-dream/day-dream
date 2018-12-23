@@ -1,7 +1,13 @@
 import React from 'react';
-
-function Content(){
-  return <h1>Content</h1>
+ 
+class Content extends React.Component{
+  constructor(props){
+    super(props)
+  }
+  render(){
+    return React.createElement(this.props.component,{},null)
+  }
 }
+
 
 export default Content;
