@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import { Router, Route, Link } from 'react-router'
-import Style from './index.less'
+import Style from './Header.less'
 import Button from '../../button/Button.jsx'
 class ContentHeader extends Component {
   constructor (props) {

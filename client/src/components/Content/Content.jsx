@@ -1,10 +1,11 @@
 import React, {Component} from 'react'
 import { Router, Route, Link } from 'react-router'
-import ContentHeader from './ContentHeader/index.jsx'
-import ContentMain from './ContentMain/index.jsx'
-import Style from './index.less'
+import ContentHeader from './Header/Header.jsx'
+import ContentMain from './Main/Main.jsx'
+import Style from './Content.less'
 
-import Button from '../../components/button/Button.jsx'
+import Button from '../button/Button.jsx'
+
 class Content extends Component {
   constructor (props) {
     super(props)
@@ -15,7 +16,6 @@ class Content extends Component {
       <ContentHeader></ContentHeader>
       <ContentMain></ContentMain>
       <Button type= 'dashed'>2333</Button>
-
     </main>
   }
 }

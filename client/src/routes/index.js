@@ -1,20 +1,30 @@
 import React from 'react'
-import { BrowserRouter, Route, Link } from 'react-router-dom'
+import { BrowserRouter, Route, Link, Router } from 'react-router-dom'
 
-const Blog = () => import('../pages/Blog/index.jsx')
-const App = () => import('../pages/App/index.jsx')
+const Blog = () => import('../pages/blog/Blog.jsx')
+const App = () => import('../pages/app/app.jsx')
+const Content = () => import('../components/content/Content.jsx')
+const Sidebar = () => import('../components/side_bar/Sidebar.jsx')
 
-const Router = () => {
+let Routers = () => {
   return (
     <BrowserRouter>
-      <Route component={App}>
+      <div>
+        <Sidebar></Sidebar>
+
+        <Route path='/' component={App}>
+
+          {/* <Route path='/todo' component={Todo} /> */}
+          {/* <Route path='/development' component={Development} /> */}
+          {/* <Route path='/setting' component={Setting} /> */}
+        </Route>
+
         <Route path='/blog' component={Blog} />
-      </Route>
-      {/* <Route path='/todo' component={Todo} /> */}
-      {/* <Route path='/development' component={Development} /> */}
-      {/* <Route path='/setting' component={Setting} /> */}
+
+
+      </div>
     </BrowserRouter>
   )
 }
 
-export default Router
+export default Routers

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-import Style from './index.less'
+import Style from './Sidebar.less'
 
 class Sidebar extends Component {
   constructor (props) {

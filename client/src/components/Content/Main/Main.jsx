@@ -1,8 +1,8 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-import Style from './index.less'
+import Style from './Main.less'
 
-const Blog = () => import('../../../pages/Blog/index.jsx')
+const Blog = () => import('../../../pages/blog/Blog.jsx')
 
 class ContentMain extends React.Component {
   constructor (props) {
@@ -14,8 +14,9 @@ class ContentMain extends React.Component {
       <div className={Style.MainContainer}>
         <div className={Style.Main}>
           Main Content
-          <Route path="/blog" component={Blog}></Route>
           {this.props.children}
+
+          [<Route path="/blog" component={Blog}></Route>]
         </div>
       </div>
     )

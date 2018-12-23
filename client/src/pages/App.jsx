@@ -2,7 +2,7 @@ import React,{Component} from 'react'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 
-import Content from '../components/Content/index.jsx'
+import Content from '../components/Content/Content.jsx'
 import Sidebar from '../components/Sidebar/Sidebar.jsx'
 import Button from '../components/button/Button.jsx'
 import SideBar from './SideBar.jsx'
@@ -12,6 +12,7 @@ const About = () => <h2>About</h2>;
 const Blog = () => <h2>Blog</h2>;
 const Users = () => <h2>Users</h2>;
 const ToDo = () => <h2>ToDo</h2>;
+
 const App = () => (
   <Router>
     <div style={{display:"flex"}}>
