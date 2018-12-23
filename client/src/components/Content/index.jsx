@@ -12,7 +12,9 @@ class Content extends Component {
   render () {
     return <main className={Style.ContentContainer}>
       <ContentHeader></ContentHeader>
-      <ContentMain></ContentMain>
+      <ContentMain>
+      </ContentMain>
+      {this.props.children}
     </main>
   }
 }

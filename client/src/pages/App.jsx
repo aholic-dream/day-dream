@@ -1,30 +1,24 @@
-import React from 'react';
-import Login from './Login.jsx';
-import Content from './Content.jsx';
-import AsyncComponent from '../components/asyn/Async.jsx';
-import Button from '../components/button/Button.jsx';
-
-import { Router, Route, Link } from 'react-router'
+import React,{Component} from 'react'
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 
-const AsyncHome = AsyncComponent(() => import('../components/button/Button.jsx'));
+import Content from '../components/Content/index.jsx'
+import Sidebar from '../components/Sidebar/Sidebar.jsx'
+import Button from '../components/button/Button.jsx'
 
-class App extends React.Component{
-  constructor(props){
-    super(props);
-    this.state = {
-      isLogin : false
-    }
-    this.changeLoginState = this.changeLoginState.bind(this);
-  }
-  changeLoginState (e) {
-    e.stopPropagation();
-    this.setState({isLogin:!this.state.isLogin})
-  }
-  render(){
-  let el = (this.state.isLogin)?<Content component = {AsyncHome}/>: <Login/>;
-    return <div onClick={this.changeLoginState}>{el}</div>
-  }
-}
+const Index = () => <h2>Home</h2>;
+const About = () => <h2>About</h2>;
+const Users = () => <h2>Users</h2>;
+
+const App = () => (
+  <Router>
+    <div>
+      <Sidebar> </Sidebar>
+      <Route path="/" exact component={Index} />
+      <Route path="/about/" component={About} />
+      <Route path="/users/" component={Users} />
+    </div>
+  </Router>
+);
 
 export default App;

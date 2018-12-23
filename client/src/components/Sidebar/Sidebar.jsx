@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import { Router, Route, Link } from 'react-router'
 import Style from './index.less'
 
-class Header extends Component {
+class Sidebar extends Component {
   constructor (props) {
     super(props)
   }
@@ -13,12 +13,18 @@ class Header extends Component {
         <div className={Style.logo}>
           <p>Everything For Daily Life</p>
         </div>
-
         <nav className={Style.side_nav}>
-          <a href="">Blog</a>
-          <a href="">ToDO</a>
-          <a href="">开发</a>
-          <a href="">设置</a>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about/">About</Link>
+            </li>
+            <li>
+              <Link to="/users/">Users</Link>
+            </li>
+          </ul>   
         </nav>
 
       </div>
@@ -31,4 +37,4 @@ class Header extends Component {
   }
 }
 
-export default Header
+export default Sidebar
