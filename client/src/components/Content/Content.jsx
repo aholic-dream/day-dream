@@ -5,7 +5,8 @@ import ContentMain from './Main/Main.jsx'
 import Style from './Content.less'
 
 import Button from '../UI/Button/Button.jsx'
-import Row from '../UI/grid/row.jsx'
+import Row from '../UI/grid/Row.jsx'
+import Col from '../UI/grid/Col.jsx'
 
 class Content extends Component {
   constructor (props) {
@@ -17,7 +18,13 @@ class Content extends Component {
       <ContentHeader></ContentHeader>
       <ContentMain></ContentMain>
       <Button type= 'dashed'>2333</Button>
-      <Row></Row>
+      <Row align='middle' justify='start' gutter={8} type='flex'>
+        <Col className="hahah" span={12} xs={{span: 12,offset: 2}}>12313</Col>
+        <Col >123123</Col>
+        <Col >123</Col>
+        <Col >123</Col>
+        <Col >123</Col>
+      </Row>
     </main>
   }
 }
