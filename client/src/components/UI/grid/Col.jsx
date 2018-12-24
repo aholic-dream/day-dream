@@ -1,4 +1,5 @@
 import React from 'react'
+<<<<<<< HEAD
 import Style from './style/index.less'
 import propTypes from 'prop-types'
 import classNames from 'classnames'
@@ -75,4 +76,26 @@ Col.propTypes = {
   xxl: propTypes.oneOfType([propTypes.number, propTypes.object])
 }
 
+=======
+
+import style from './style/index.less';
+
+class Col extends React.Component {
+  constructor (props) {
+    super()
+  }
+  render () {
+    return (
+      <div className={style.row}>
+        <div className={style['col-2']}>2</div>
+        <div className={style['col-2']}>2</div>
+        <div className={style['col-2']}>2</div>
+        <div className={style['col-2']}>2</div>
+        <div className={style['col-2']}>2</div>
+      </div>
+    )
+  }
+}
+
+>>>>>>> 7358f912bc62c8f5dcc9f050f43cdb7f1625737e
 export default Col

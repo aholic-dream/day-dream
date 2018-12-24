@@ -1,5 +1,8 @@
-import React from 'react'
-import Style from './button_style.less'
+import React from 'react';
+import Style from './button_style.less';
+import PropTypes from 'prop-types';
+import { normalize } from 'path';
+
 // class Button extends React.Component{
 //   constructor(props){
 //     super(props)
@@ -21,20 +24,31 @@ import Style from './button_style.less'
 //     return el
 //   }
 // }
-const Button = (props)=>{
+//const Button = ({ children = 'button',size = 'normal',color = 'blue', radiu = '2px'} = {})=>{
+  const Button = ({children,size,color,radiu})=>{
   let el;
-  let p = props;
-  // debugger
-  let className = `${Style.myButton} ${(p.type)?p.type:Style['primary']} ${(p.size)?Style[p.size]:Style['normal']} ${(p.color)?Style[p.color]:Style['blue']}`
-  let radiu = (p.radiu)?{borderRadius:p.radiu}:{};
-  if(typeof(p.children) === 'string'){
-    el = <div className = {className} style = {radiu}>{p.children}</div>;
-  }
-  else{
-    console.error('必须要是字符串');
-    el = null;
-  }
-  return el
+  let className = `${Style.myButton} ${Style[size]} ${Style[color]}`
+  let radiuObj = {borderRadius:radiu};
+  // if(typeof(children) === 'string'){
+  //   el = <div className = {className} style = {radiuObj}>{children}</div>;
+  // }
+  // else{
+  //   console.error('必须要是字符串');
+  //   el = null;
+  // }
+  return <button className = {className} style = {radiuObj}>{children}</button>
 }
 
+Button.propTypes = {
+  children: PropTypes.string,
+  size:PropTypes.string,
+  color:PropTypes.string,
+  radiu:PropTypes.string
+}
+Button.defaultProps = {
+  children: 'button',
+  size:'normal',
+  color:'blue',
+  radiu:'2px'
+};
 export default Button
