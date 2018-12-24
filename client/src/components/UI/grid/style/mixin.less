@@ -1,0 +1,138 @@
+@import '../../mixin.less';
+
+@grid-columns : 24;
+@grid-gutter-width : 0;
+// Media queries breakpoints
+// Extra small screen / phone
+@screen-xs : 480px;
+@screen-xs-min : @screen-xs;
+
+// Small screen / tablet
+@screen-sm : 576px;
+@screen-sm-min : @screen-sm;
+
+// Medium screen / desktop
+@screen-md : 768px;
+@screen-md-min : @screen-md;
+
+// Large screen / wide desktop
+@screen-lg : 992px;
+@screen-lg-min : @screen-lg;
+
+// Extra large screen / full hd
+@screen-xl : 1200px;
+@screen-xl-min : @screen-xl;
+
+// Extra extra large screen / large descktop
+@screen-xxl : 1600px;
+@screen-xxl-min : @screen-xxl;
+
+// provide a maximum
+@screen-xs-max : (@screen-sm-min - 1px);
+@screen-sm-max : (@screen-md-min - 1px);
+@screen-md-max : (@screen-lg-min - 1px);
+@screen-lg-max : (@screen-xl-min - 1px);
+@screen-xl-max : (@screen-xxl-min - 1px);
+
+// import clearfix
+// 生成行
+.make-row (@gutter: @grid-gutter-width) {
+  position: relative;
+  margin-left: (@gutter / -2);
+  margin-right: (@gutter / -2);
+  height: auto;
+  .clearfix;
+}
+// 生成列
+.make-grid-columns() {
+  .col(@index) {
+    @item: ~'.col-@{index}, .col-xs-@{index}, .col-sm-@{index}, .col-md-@{index}, .col-lg-@{index}, .col-xl-@{index}, .col-xxl-@{index}';
+  }
+  .col(@index, @list) when (@index =< @grid-column) {
+    @item: ~'.col-@{index}, .col-xs-@{index}, .col-sm-@{index}, .col-md-@{index}, .col-lg-@{index}';
+    .col((@index + 1), ~'@{list}, @{item}');
+  }
+  .col(@index, @list) when (@index > @grid-column) {
+    @{list} {
+      position: relative;
+      min-height: 1px;
+      padding-left: (@grid-gutter-width / 2);
+      padding-right: (@grid-gutter-width / 2);
+    }
+  }
+  .col(1);
+}
+
+.float-grid-columns(@class) {
+  .col(@index) {
+    // initial
+    @item: ~'.col@{class}-@{index}';
+    .col((@index + 1), @item);
+  }
+  .col(@index, @list) when (@index =< @grid-columns) {
+    // general
+    @item: ~'.col@{class}-@{index}';
+    .col((@index + 1), ~'@{list}, @{item}');
+  }
+  .col(@index, @list) when (@index > @grid-columns) {
+    // terminal
+    @{list} {
+      float: left;
+      flex: 0 0 auto;
+    }
+  }
+
+  .col(1); // kickstart it
+}
+
+// 生成列
+.loop-grid-columns(@index, @class) when (@index > 0) {
+  .col@{class}-@{index} {
+    display: block;
+    box-sizing: border-box;
+    width: percentage(@index / @grid-columns)
+  }
+  .col@{class}-push-@{index} {
+    left: percentage((@index / @grid-columns))
+  }
+  .col@{class}-pull-@{index} {
+    right: percentage((@index / @grid-columns))
+  }
+  .col@{class}-offset-@{index} {
+    margin-left: percentage((@index / @grid-columns))
+  }
+  .col@{class}-order-@{index} {
+    order: @index;
+  }
+  .loop-grid-columns((@index - 1), @class);
+
+}
+// 当列为0
+.loop-grid-columns(@index, @class) when (@index = 0) {
+  .col@{class}-@{index} {
+    display: none;
+  }
+  .col-push-@{index} {
+    left: auto;
+  }
+  .col-pull-@{index} {
+    right: auto;
+  }
+  .col@{class}-push-@{index} {
+    left: auto;
+  }
+  .col@{class}-pull-@{index} {
+    right: auto;
+  }
+  .col@{class}-offset-@{index} {
+    margin-left: 0;
+  }
+  .col@{class}-order-@{index} {
+    order: 0;
+  }
+}
+
+.make-grid(@class: ~'') {
+  .float-grid-columns(@class);
+  .loop-grid-columns(@grid-columns, @class);
+}
