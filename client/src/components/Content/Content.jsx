@@ -5,6 +5,7 @@ import ContentMain from './Main/Main.jsx'
 import Style from './Content.less'
 
 import Button from '../UI/Button/Button.jsx'
+import Row from '../UI/grid/row.jsx'
 
 class Content extends Component {
   constructor (props) {
@@ -16,6 +17,7 @@ class Content extends Component {
       <ContentHeader></ContentHeader>
       <ContentMain></ContentMain>
       <Button type= 'dashed'>2333</Button>
+      <Row></Row>
     </main>
   }
 }
