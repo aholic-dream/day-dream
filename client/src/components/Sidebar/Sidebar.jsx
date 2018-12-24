@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import Style from './Sidebar.less'
-
+import Button from '../UI/Button/Button.jsx'
 class Sidebar extends Component {
   constructor (props) {
     super(props)
@@ -23,7 +23,7 @@ class Sidebar extends Component {
         </div>
         <div className={Style.side_bottom}>
           <div className={Style.login}>
-            <button>Welcome To Daily Dream</button>
+            <Button>Welcome To Daily Dream</Button>
           </div>
         </div>
       </header>

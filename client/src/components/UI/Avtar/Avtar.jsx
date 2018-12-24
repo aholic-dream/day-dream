@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 const Avtar = (props) => {
   let el;
   let cssObj = {width:props.width,height:props.width}
-  console.log(props,cssObj)
+
   el = <div className = {style.avtarContainer} style={cssObj}>
     <img src={props.src} alt="avtar"/>
   </div>;

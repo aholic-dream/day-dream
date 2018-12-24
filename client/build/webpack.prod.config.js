@@ -23,7 +23,19 @@ let config = {
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           //如果需要，可以在 sass-loader 之前将 resolve-url-loader 链接进来
-          use: ['css-loader', 'postcss-loader','less-loader']
+          use: [
+            {
+              loader:'css-loader',
+              options: { 
+                //css-loader中importLoaders选项的作用是用于配置css-loader作用于 @import 的资源之前需要经过其他loader的个数
+                importLoaders: 2,
+                modules: true,
+                localIdentName: '_[hash:base64:5]'
+              }
+            }, 
+            'postcss-loader',
+            'less-loader'
+          ]
         })
       }
     ]

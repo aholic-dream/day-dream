@@ -10,6 +10,8 @@ import dog from '../../assets/dog.jpg'
 import Button from '../UI/Button/Button.jsx'
 import Row from '../UI/grid/row.jsx'
 
+import Badges from '../UI/Badges/Badges.jsx'
+
 class Content extends Component {
   constructor (props) {
     super(props)
@@ -23,6 +25,7 @@ class Content extends Component {
       <i className='iconfont'> &#xe627; </i> 
       <Avtar></Avtar>
       <Avtar width = '40px' src={dog}></Avtar>
+      <Badges/> <Badges color = 'rgb(225, 0, 80)'/> <Badges color = '#3f51b5'/> 
       <Row></Row>
     </main>
   }
