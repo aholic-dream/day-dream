@@ -17,6 +17,7 @@ class Content extends Component {
       <ContentHeader></ContentHeader>
       <ContentMain></ContentMain>
       <Button type= 'dashed'>2333</Button>
+      <i className='iconfont'> &#xe627; </i>
       <Row></Row>
     </main>
   }
