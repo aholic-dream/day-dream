@@ -15,7 +15,7 @@ class Content extends Component {
     return <main className={Style.ContentContainer}>
       <ContentHeader></ContentHeader>
       <ContentMain></ContentMain>
-      <Button type= 'dashed'>2333</Button>
+      <Button type= 'dashed'>23</Button>
     </main>
   }
 }
