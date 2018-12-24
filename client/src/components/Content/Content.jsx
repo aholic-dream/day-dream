@@ -8,7 +8,8 @@ import Style from './Content.less'
 import dog from '../../assets/dog.jpg'
 
 import Button from '../UI/Button/Button.jsx'
-import Row from '../UI/grid/row.jsx'
+import Row from '../UI/grid/Row.jsx'
+import Col from '../UI/grid/Col.jsx'
 
 import Badges from '../UI/Badges/Badges.jsx'
 
