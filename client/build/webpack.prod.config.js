@@ -15,7 +15,6 @@ let config = {
     rules: [
       {
         test: /\.(css|less)$/,
-        exclude: [path.resolve(__dirname, '../src/components/UI')],
         //css 文件大于250kb 在考虑
         //css 分割 css-split-webpack-plugin'
         use: ExtractTextPlugin.extract({
@@ -29,25 +28,6 @@ let config = {
                 importLoaders: 2,
                 modules: true,
                 localIdentName: '_[hash:base64:5]'
-              }
-            }, 
-            'postcss-loader',
-            'less-loader'
-          ]
-        })
-      },
-      {
-        test: /\.(css|less)$/,
-        include: path.resolve(__dirname, '../src/components/UI'),
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          //如果需要，可以在 sass-loader 之前将 resolve-url-loader 链接进来
-          use: [
-            {
-              loader:'css-loader',
-              options: { 
-                //css-loader中importLoaders选项的作用是用于配置css-loader作用于 @import 的资源之前需要经过其他loader的个数
-                importLoaders: 2
               }
             }, 
             'postcss-loader',

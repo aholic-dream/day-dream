@@ -29,26 +29,7 @@ let config = {
             //options:{path: './src/build/postcss.config.js'}
           },
           "less-loader"
-        ],
-        exclude: path.resolve(__dirname, '../src/components/UI')
-      },
-      {
-        test: /\.(css|less)$/,
-        use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: { 
-              //css-loader中importLoaders选项的作用是用于配置css-loader作用于 @import 的资源之前需要经过其他loader的个数
-              importLoaders: 2,
-            }
-          },{
-            loader: 'postcss-loader',
-            //options:{path: './src/build/postcss.config.js'}
-          },
-          "less-loader"
-        ],
-        include: path.resolve(__dirname, '../src/components/UI')
+        ]
       }
     ]
   },
