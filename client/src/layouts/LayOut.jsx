@@ -20,6 +20,7 @@ const Users = () => <h2>Users</h2>;
 const LayOut = () => (
   <div className={Style.container}>
     <Sidebar/>
+
     <main className={Style.ContentContainer}>
       <Header></Header>
       <div className={Style.Main}>
@@ -28,7 +29,7 @@ const LayOut = () => (
         <Route path="/users" component={Users} />
         <Route path="/todo" component={ToDo} />
       </div>
-      <Button> 2333</Button> <Badges/> <Avtar src = {dog}></Avtar>
+      <Button size='small'> 2333</Button> <Badges/> <Avtar src = {dog}></Avtar>
       <Row> <Col>gfhd</Col></Row>
     </main>
   </div>

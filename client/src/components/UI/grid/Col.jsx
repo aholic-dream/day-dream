@@ -62,7 +62,7 @@ class Col extends React.Component {
     return (
       <RowContext.Consumer>
         {(gutter) => {
-         return <div className={classes} style={(
+         return <div {...others} className={classes} style={(
             gutter > 0 ? {
               paddingLeft: gutter / 2,
               paddingRight: gutter / 2,
