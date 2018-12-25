@@ -25,27 +25,23 @@ import { normalize } from 'path';
 //   }
 // }
 //const Button = ({ children = 'button',size = 'normal',color = 'blue', radiu = '2px'} = {})=>{
-  const Button = ({children,size,color,radiu})=>{
+  const Button = ({children,size,color,radiu,type})=>{
   let el;
   let className = `${Style.myButton} ${Style[size]} ${Style[color]}`
   let radiuObj = {borderRadius:radiu};
-  // if(typeof(children) === 'string'){
-  //   el = <div className = {className} style = {radiuObj}>{children}</div>;
-  // }
-  // else{
-  //   console.error('必须要是字符串');
-  //   el = null;
-  // }
   return <button className = {className} style = {radiuObj}>{children}</button>
 }
 
 Button.propTypes = {
+  type: PropTypes.string,
   children: PropTypes.string,
   size:PropTypes.string,
   color:PropTypes.string,
   radiu:PropTypes.string
 }
 Button.defaultProps = {
+  type: 'normal',
+  // icon fab normal
   children: 'button',
   size:'normal',
   color:'blue',

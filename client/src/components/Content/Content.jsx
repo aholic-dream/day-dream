@@ -8,8 +8,8 @@ import Style from './Content.less'
 import dog from '../../assets/dog.jpg'
 
 import Button from '../UI/Button/Button.jsx'
-import Row from '../UI/grid/Row.jsx'
-import Col from '../UI/grid/Col.jsx'
+// import Row from '../UI/grid/Row.jsx'
+// import Col from '../UI/grid/Col.jsx'
 
 import Badges from '../UI/Badges/Badges.jsx'
 
@@ -27,9 +27,9 @@ class Content extends Component {
       <Avtar></Avtar>
       <Avtar width = '40px' src={dog}></Avtar>
       <Badges/> <Badges color = 'rgb(225, 0, 80)'/> <Badges color = '#3f51b5'/> 
-      <Row align='top' type='flex'>
-        <Col span={12}>12313</Col>
-      </Row>
+      {/* <Row align='top' type='flex'>
+      
+      </Row> */}
     </main>
   }
 }
