@@ -5,15 +5,21 @@ button{
   display: inline-block;
   position: relative;
   min-width: 64px;
-  overflow: hidden;
-  line-height: 2em;
-  text-align: center;
-  user-select:none;
-  border-radius: 2px;
-  padding: 0 1rem;
+  padding: 0 15px;
+  height: 32px;
   transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   transition-delay: 0.1s;
+  outline: 0;
+  
+  line-height: 1.499;
+  font-weight: 400;
+  white-space: nowrap;
+  text-align: center;
+  
+  border: 1px solid transparent;
+  border-radius: 4px;
   box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+
 }
 .myButton:active {
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
@@ -46,15 +52,19 @@ button{
 }
 .small{
   font-size: 0.8rem;
-  
+  line-height: 24px;
+  height: 24px;
 }
 .normal{
   font-size: 1rem;
- 
+  line-height: 1rem;
+  height: 32px;
 }
 .big{
   font-size: 1.2rem;
- 
+  line-height: 1.2rem;
+  height: 40px;
+
 }
 .white{
   color: #646464;
