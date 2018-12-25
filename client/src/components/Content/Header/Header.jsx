@@ -15,7 +15,6 @@ class Header extends Component {
       </div>
       <div className={Style.HeaderRight}>
         <Button>sign in</Button>
-      
       </div>
     </div>
   }

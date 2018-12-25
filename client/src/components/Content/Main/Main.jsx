@@ -3,11 +3,10 @@ import { BrowserRouter as Router, Route, Link, IndexRoute} from 'react-router-do
 import Style from './Main.less'
 import Button from '../../UI/Button/Button.jsx'
 
-const Index = () => <Button>Home</Button>;
 const About = () => <h2>About</h2>;
 const Blog = () => <h2>Blog</h2>;
 const Users = () => <h2>Users</h2>;
-const ToDo = () => <h2>ToDo</h2>;
+import ToDo from "";
 
 class ContentMain extends React.Component {
   constructor (props) {

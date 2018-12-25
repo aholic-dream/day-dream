@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import Style from './Sidebar.less'
-import Button from '../UI/Button/Button.jsx'
+import Button from '../components/UI/Button/Button.jsx'
 class Sidebar extends Component {
   constructor (props) {
     super(props)

@@ -6,7 +6,7 @@ import App from './src/pages/App.jsx'
 import './src/style/index.less'
 
 ReactDom.render(
-  <BrowserRouter>
+  <BrowserRouter className = "router">
 		<Route path="/" component={App}></Route>
   </BrowserRouter>,
   document.getElementById('app')
