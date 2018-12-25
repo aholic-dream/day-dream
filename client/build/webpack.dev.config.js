@@ -29,17 +29,38 @@ let config = {
             //options:{path: './src/build/postcss.config.js'}
           },
           "less-loader"
-        ]
+        ],
+        exclude: path.resolve(__dirname, '../src/components/UI')
+      },
+      {
+        test: /\.(css|less)$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: { 
+              //css-loader中importLoaders选项的作用是用于配置css-loader作用于 @import 的资源之前需要经过其他loader的个数
+              importLoaders: 2,
+            }
+          },{
+            loader: 'postcss-loader',
+            //options:{path: './src/build/postcss.config.js'}
+          },
+          "less-loader"
+        ],
+        include: path.resolve(__dirname, '../src/components/UI')
       }
     ]
   },
 	plugins: [
+    new CleanWebpackPlugin(['dist'], {
+      root: path.resolve(__dirname, '../')
+    }),
     new HtmlWebpackPlugin({
       title: 'generator',
       template: './index.html',
       favicon:'./favicon.ico'
     }),
-    new CleanWebpackPlugin(['../dist']),
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new WebpackBar({

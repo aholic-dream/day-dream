@@ -27,7 +27,9 @@ class Content extends Component {
       <Avtar></Avtar>
       <Avtar width = '40px' src={dog}></Avtar>
       <Badges/> <Badges color = 'rgb(225, 0, 80)'/> <Badges color = '#3f51b5'/> 
-      <Row></Row>
+      <Row align='top' type='flex'>
+        <Col span={12}>12313</Col>
+      </Row>
     </main>
   }
 }
