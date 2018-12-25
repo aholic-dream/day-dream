@@ -1,7 +1,8 @@
 import React from 'react'
-import Style from './style/index.less'
 import propTypes from 'prop-types'
 import classNames from 'classnames'
+import RowContext from './RowContext.jsx'
+
 class Col extends React.Component {
   constructor (props) {
     super(props)
@@ -17,6 +18,7 @@ class Col extends React.Component {
       span,
       className,
       children,
+      style,
       ...others
     } = props
 
@@ -57,7 +59,19 @@ class Col extends React.Component {
       sizeClassObj,
     )
 
-    return <div className={classes}>{children}</div>
+    return (
+      <RowContext.Consumer>
+        {(gutter) => {
+         return <div className={classes} style={(
+            gutter > 0 ? {
+              paddingLeft: gutter / 2,
+              paddingRight: gutter / 2,
+              ...style
+            } : style
+          )}>{children}</div>
+        }}
+      </RowContext.Consumer>
+    )
   }
 }
 
