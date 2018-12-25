@@ -1,33 +1,27 @@
 /*
  * action 类型
+ *action ｛type:'*****',param1:'131'...｝,除了 type 字段外,action 对象的结构完全由你自己决定
  */
-
 export const ADD_TODO = 'ADD_TODO';
 export const TOGGLE_TODO = 'TOGGLE_TODO'
-export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER'
 
-/*
- * 其它的常量
- */
-
-export const VisibilityFilters = {
-  SHOW_ALL: 'SHOW_ALL',
-  SHOW_COMPLETED: 'SHOW_COMPLETED',
-  SHOW_ACTIVE: 'SHOW_ACTIVE'
-}
 
 /*
  * action 创建函数
+ * action 创建函数 生成普通的js对象；也就只是简单的返回一个 action对象
  */
 
-export function addTodo(text) {
-  return { type: ADD_TODO, text }
+
+export function addTodo (id){
+  return {
+    type: ADD_TODO,
+    text
+  }
 }
 
-export function toggleTodo(index) {
-  return { type: TOGGLE_TODO, index }
-}
-
-export function setVisibilityFilter(filter) {
-  return { type: SET_VISIBILITY_FILTER, filter }
+export function toggleTodo (index){
+  return {
+    type: TOGGLE_TODO,
+    index
+  }
 }

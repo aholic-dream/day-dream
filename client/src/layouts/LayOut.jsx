@@ -11,12 +11,12 @@ import Avtar from '../components/UI/Avtar/Avtar.jsx'
 import dog from '../assets/dog.jpg'
 import Button from '../components/UI/Button/Button.jsx'
 import Badges from '../components/UI/Badges/Badges.jsx'
-
+import ToDo from '../pages/todo/ToDo.jsx'
 const About = () => <h2>About</h2>;
 const Blog = () => <h2>Blog</h2>;
 const Users = () => <h2>Users</h2>;
-const ToDo = () => <h2>ToDo</h2>;
 
+{/* <React.Fragment></React.Fragment> 空标签，不会生成div */}
 const LayOut = () => (
   <div className={Style.container}>
     <Sidebar/>

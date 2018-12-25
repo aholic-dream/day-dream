@@ -31,11 +31,6 @@ export default class Row extends React.Component {
           ...style
         }
         : style)
-        console.log(<RowContext.Provider value={{gutter}}>
-          <div {...other} className={classes} style={rowStyle}>
-            {children}
-          </div>
-        </RowContext.Provider>)
     return (
       <RowContext.Provider value={gutter}>
         <div {...other} className={classes} style={rowStyle}>
