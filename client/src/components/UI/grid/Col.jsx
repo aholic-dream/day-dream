@@ -45,6 +45,7 @@ class Col extends React.Component {
     })
 
     const classes = classNames(
+      'col',
       {
         [`col-${span}`]: span !== undefined,
         [`col-order-${order}`]: order,
