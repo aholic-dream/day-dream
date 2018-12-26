@@ -12,17 +12,17 @@ export const TOGGLE_TODO = 'TOGGLE_TODO'
  */
 
 
-export function addTodo (text){
+export function addTodo ({id,text}){
   return {
     type: ADD_TODO,
-    text,
-    id
+    id,
+    text
   }
 }
 
-export function toggleTodo (index){
+export function toggleTodo (id){
   return {
     type: TOGGLE_TODO,
-    index
+    id
   }
 }

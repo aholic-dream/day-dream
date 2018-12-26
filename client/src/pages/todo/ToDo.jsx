@@ -4,6 +4,9 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import ToDoList from '../../components/ToDo/TodoList.jsx';
 import store from '../../model/index.js'
+import {toggleTodo} from '../../model/action.js'
+import { addTodo } from '../../model/action.js'
+import { Provider } from 'react-redux'
 
 const mapStateToProps = state => {
   return {
@@ -11,9 +14,9 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    onTodoClick: id => {
+    toggleTodo: id => {
       dispatch(toggleTodo(id))
     }
   }
@@ -24,26 +27,26 @@ const StateTodoList = connect(
   mapDispatchToProps
 )(ToDoList)
 
-const Boottom = ({dispatch })=>{
+const Todoboottom = connect()(({dispatch})=>{
   let el =<div className = "todoboottom"  
-  onClick = {(e)=>{
-    e.preventDefault();
-    e.stopPropagation();
-    dispatch(addTodo('fdsg'))
-  }}>  
-  todolist</div>
+    onClick = {(e)=>{
+      e.preventDefault();
+      e.stopPropagation();
+      dispatch(addTodo({text:'fddfsdfsg',id:56}))
+    }}>  
+    todolist
+  </div>
   return el
-}
-const Todoboottom = connect()(Boottom);
+})
 
 
 const Todo = (props) => {
-  let el = <div>
+  let el = <Provider  store =  {store}>
     <div className = "todoheader"> todoheader</div>
     <StateTodoList />
-    {/* <ToDoList todos = {store.getState().todos}/> */}
+    {/* <ToDoList todos = {store.getState().todos} /> */}
     <Todoboottom/>
-  </div>;
+  </Provider>;
   return el
 }
 

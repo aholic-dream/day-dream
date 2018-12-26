@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const TodoItem = ({ onClick, completed, name }) => {
+const TodoItem = ({ onClick, completed, text,id }) => {
   let isDone = String(completed)
   let el = <li
       onClick={onClick}
@@ -9,15 +9,15 @@ const TodoItem = ({ onClick, completed, name }) => {
         textDecoration: completed ? 'line-through' : 'none'
       }}
     >
-      {name} + {isDone}
+    {id} + {text} + {isDone}
     </li>
   return el
 }
 
 TodoItem.propTypes = {
-  onClick: PropTypes.func,
+  onClick: PropTypes.func.isRequired,
   completed: PropTypes.bool.isRequired,
-  name: PropTypes.string.isRequired
+  text: PropTypes.string.isRequired
 }
 
 export default TodoItem
