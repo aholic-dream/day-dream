@@ -6,6 +6,7 @@ import ToDoList from '../../components/ToDo/TodoList.jsx';
 import store from '../../model/index.js'
 import {toggleTodo} from '../../model/action.js'
 import { addTodo } from '../../model/action.js'
+import { Provider } from 'react-redux'
 
 const mapStateToProps = state => {
   return {
@@ -40,12 +41,12 @@ const Todoboottom = connect()(({dispatch})=>{
 
 
 const Todo = (props) => {
-  let el = <div>
+  let el = <Provider  store =  {store}>
     <div className = "todoheader"> todoheader</div>
-    {/* <StateTodoList /> */}
-    <ToDoList todos = {store.getState().todos} />
+    <StateTodoList />
+    {/* <ToDoList todos = {store.getState().todos} /> */}
     <Todoboottom/>
-  </div>;
+  </Provider>;
   return el
 }
 
