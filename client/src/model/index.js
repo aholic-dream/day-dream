@@ -14,11 +14,11 @@ import {
 const initialState = {
   todos:[
     {
-      id:1,name:'add todo',completed:false
+      id:1,text:'add todo',completed:false
     },{
-      id:2,name:'add todo1',completed:false
+      id:2,text:'add todo1',completed:false
     },{
-      id:3,name:'add todo2',completed:false
+      id:3,text:'add todo2',completed:false
     }
   ]
 }
@@ -29,16 +29,20 @@ const initialState = {
 const reducer = function(state = initialState, action) {
   switch (action.type) {
     case ADD_TODO: {
-      return {
-        ...state,
-        cart: [...state.cart, action.payload]
-      }
+      return [
+        ...state, 
+        {
+          id:action.id,
+          text: action.text,
+          completed: false
+        }
+      ]
     }
       break;
     case TOGGLE_TODO: {
       let nextState = Object.assign({},state);
       state.todos.map(todo =>{
-        (todo.id === action.payload.id)
+        (todo.id === action.id)
           ?{...todo,complete : !todo.complete}
           :todo
       })
