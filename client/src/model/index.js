@@ -29,8 +29,9 @@ const initialState = {
 const reducer = function(state = initialState, action) {
   switch (action.type) {
     case ADD_TODO: {
+
       return {
-        ...state,
+        ...state.todos,
         cart: [...state.cart, action.payload]
       }
     }

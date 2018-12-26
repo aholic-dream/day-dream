@@ -14,7 +14,7 @@ class Header extends Component {
         <input type="text" placeholder="search" />
       </div>
       <div className={Style.HeaderRight}>
-        <Button>sign in</Button>
+        <Button size='big'>sign in</Button>
       </div>
     </div>
   }

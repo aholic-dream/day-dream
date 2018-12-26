@@ -12,6 +12,7 @@ import dog from '../assets/dog.jpg'
 import Button from '../components/UI/Button/Button.jsx'
 import Badges from '../components/UI/Badges/Badges.jsx'
 import ToDo from '../pages/todo/ToDo.jsx'
+import Todos from '../pages/todo_x/Todo.jsx'
 const About = () => <h2>About</h2>;
 const Blog = () => <h2>Blog</h2>;
 const Users = () => <h2>Users</h2>;
@@ -28,9 +29,9 @@ const LayOut = () => (
         <Route path="/about"  component={About} />
         <Route path="/users" component={Users} />
         <Route path="/todo" component={ToDo} />
+        <Route path="/todo_x" component={Todos} />
       </div>
-      <Button size='small'> 2333</Button> <Badges/> <Avtar src = {dog}></Avtar>
-      <Row> <Col>gfhd</Col></Row>
+
     </main>
   </div>
 )

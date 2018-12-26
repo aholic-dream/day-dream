@@ -1,0 +1,48 @@
+@input-height-base : 32px;
+@input-height-lg : 40px;
+@input-height-sm : 24px;
+@input-padding-horizontal : @control-padding-horizontal - 1px;
+@input-padding-horizontal-base: @input-padding-horizontal;
+@input-padding-horizontal-sm : @control-padding-horizontal-sm - 1px;
+@input-padding-horizontal-lg : @input-padding-horizontal;
+@input-padding-vertical-base : 4px;
+@input-padding-vertical-sm : 1px;
+@input-padding-vertical-lg : 6px;
+@input-placeholder-color : hsv(0, 0, 75%);
+@input-color : @text-color;
+@input-border-color : @border-color-base;
+@input-bg : #fff;
+@input-addon-bg : @background-color-light;
+// @input-hover-border-color : @primary-color;
+// @input-disabled-bg : @disabled-bg;
+@input-outline-offset : 0 0;
+
+
+.input {
+  background: @input-bg;
+  color: @input-color;
+  padding: @input-padding-horizontal;
+
+  &:placeholder {
+    color: @input-placeholder-color;
+  }
+
+}
+
+.small {
+  height: @input-height-sm;
+  padding: @input-padding-horizontal-sm @input-padding-vertical-sm;
+
+}
+
+.normal {
+  height: @input-height-base;
+  padding: @input-padding-horizontal-base @input-padding-vertical-base;
+
+}
+
+.big {
+  height: @input-height-lg;
+  padding: @input-padding-horizontal-lg @input-padding-vertical-lg;
+
+}
