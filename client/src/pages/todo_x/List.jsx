@@ -1,6 +1,4 @@
 import React from 'react'
-import {Provider} from 'react-redux'
-import todoStore from '../../model/todos_index'
 import TodoItem from './Item.jsx'
 import {connect} from 'react-redux'
 import {getVisibleTodos, toggleTodo} from '../../model/todo_action'

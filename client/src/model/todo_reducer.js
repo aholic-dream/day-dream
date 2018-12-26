@@ -1,6 +1,7 @@
 import * as Types from './todo_types'
-// reducer
+// reducer 接受不同类型的操作，返回不同的 state
 function todos (todos = [], action) {
+  // 不同的类型 不同的返回结果
   switch (action.type) {
     case Types.ADD_TODO:
       return [
@@ -40,13 +41,14 @@ function todos (todos = [], action) {
 
 const visibilityFilter = (state = 'SHOW_ALL', action) => {
   switch (action.type) {
-    case Types.SET_VISILIBILITY_FILTER:
+    case Types.SET_VISIBILITY_FILTER:
       return action.filter
     default:
       return state
   }
 }
 
+// 用于创建 store 初始化容器
 export default function todoApp (state = {}, action) {
   return {
     todos: todos(state.todos, action),
