@@ -27,17 +27,6 @@ const StateTodoList = connect(
   mapDispatchToProps
 )(ToDoList)
 
-const Todoboottom = connect()(({dispatch})=>{
-  let el =<div className = "todoboottom"  
-    onClick = {(e)=>{
-      e.preventDefault();
-      e.stopPropagation();
-      dispatch(addTodo({text:'fddfsdfsg',id:56}))
-    }}>  
-    todolist
-  </div>
-  return el
-})
 
 
 const Todo = (props) => {
@@ -45,7 +34,6 @@ const Todo = (props) => {
     <div className = "todoheader"> todoheader</div>
     <StateTodoList />
     {/* <ToDoList todos = {store.getState().todos} /> */}
-    <Todoboottom/>
   </Provider>;
   return el
 }

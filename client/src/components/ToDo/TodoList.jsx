@@ -3,18 +3,19 @@ import PropTypes from 'prop-types'
 import TodoItem from './TodoItem.jsx'
 
 
-const TodoList = ({ todos, toggleTodo }) => (
-  <ul>
+const TodoList = ({ todos, toggleTodo }) => {
+  return <ul>
     {todos.map((todo) => {
       return <TodoItem 
         key={todo.id} 
         {...todo}
-        onClick={()=>toggleTodo(todo.id)} 
+        onClick={()=>{toggleTodo(todo.id)}} 
       />
     })
       }
   </ul>
-)
+}
+
 
 TodoList.propTypes = {
   todos: PropTypes.arrayOf(
