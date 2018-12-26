@@ -4,7 +4,8 @@ import TodoItem from './TodoItem.jsx'
 
 
 const TodoList = ({ todos, toggleTodo }) => {
-  return <ul>
+  return <ul style={{backgroundColor:'#e0e0e0'}}>
+   
     {todos.map((todo) => {
       return <TodoItem 
         key={todo.id} 
@@ -13,7 +14,9 @@ const TodoList = ({ todos, toggleTodo }) => {
       />
     })
       }
+   
   </ul>
+
 }
 
 
