@@ -43,7 +43,7 @@ const Todo = (props) => {
   let el = <div>
     <div className = "todoheader"> todoheader</div>
     {/* <StateTodoList /> */}
-    <ToDoList todos = {store.getState().todos}/>
+    <ToDoList todos = {store.getState().todos} />
     <Todoboottom/>
   </div>;
   return el

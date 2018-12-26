@@ -1,0 +1,11 @@
+export const SHOW_ALL = 'SHOW_ALL'
+export const SHOW_COMPLETED = 'SHOW_COMPLETED'
+export const SHOW_ACTIVE = 'SHOW_ACTIVE'
+export const SET_VISILIBILITY_FILTER = 'SET_VISILIBILITY_FILTER'
+
+
+
+export const TOGGLE_TODO = 'TOGGLE_TODO'
+export const CHANGE_CONTENT_TODO = 'CHANGE_CONTENT_TODO'
+export const DELE_TODO = 'DELE_TODO'
+export const ADD_TODO = 'ADD_TODO'

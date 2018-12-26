@@ -18,6 +18,7 @@ class Sidebar extends Component {
             <Link to="/">Blog</Link>
             <Link to="/users">Users</Link>
             <Link to="/todo">ToDo</Link>
+            <Link to="/todo_x">ToDo_X</Link>
             <Link to="/users">Users</Link>
           </nav>
         </div>

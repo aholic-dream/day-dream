@@ -4,6 +4,7 @@ import {
   ADD_TODO,
   TOGGLE_TODO
 } from './action.js'
+
 const { SHOW_ALL } = VisibilityFilters
 
 function todos(state = [], action) {
