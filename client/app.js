@@ -8,10 +8,10 @@ import './src/style/index.less'
 
 ReactDom.render(
     <BrowserRouter className = "router">
-     <div>
-        <Route exact path="/app" component={App}/>
-        <Route path="/login" component={Account}/>
-      </div>
+     <Switch>
+        <Route  path="/" component={App}/>
+        <Route path="/login" exact component={Account}/>
+      </Switch>
     </BrowserRouter>,
   document.getElementById('app')
 )

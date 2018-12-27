@@ -15,9 +15,9 @@ class Sidebar extends Component {
             <p>Everything For Daily Life</p>
           </div>
           <nav className={Style.side_nav}>
-            <NavLink to="/app" activeClassName={Style.navActive}>Blog</NavLink>
-            <NavLink to="/app/users" activeClassName={Style.navActive}>Users</NavLink>
-            <NavLink to="/app/todo" activeClassName={Style.navActive}>ToDo</NavLink>
+            <NavLink to="/" activeClassName={Style.navActive}>Blog</NavLink>
+            <NavLink to="/users" activeClassName={Style.navActive}>Users</NavLink>
+            <NavLink to="/todo" activeClassName={Style.navActive}>ToDo</NavLink>
           </nav>
         </div>
           <div className={Style.side_bottom}>

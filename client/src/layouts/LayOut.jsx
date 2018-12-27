@@ -18,10 +18,8 @@ const LayOut = () => (
       <Header></Header>
 
       <div className={Style.Main}>
-        <Switch>
-          <Route path="/" component={Blog} />
-          <Route path="/todo" component={Todos} />
-        </Switch>
+          <Route path="/" exact component={Blog} />
+          <Route path="/todo"  component={Todos} />
       </div>
     </main>
   </div>
