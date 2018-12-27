@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link, NavLink, IndexLink } from 'react-router-dom'
 import Style from './Sidebar.less'
 import Button from '../components/UI/Button/Button.jsx'
 class Sidebar extends Component {
@@ -15,11 +15,10 @@ class Sidebar extends Component {
             <p>Everything For Daily Life</p>
           </div>
           <nav className={Style.side_nav}>
-            <Link to="/">Blog</Link>
-            <Link to="/users">Users</Link>
-            <Link to="/todo">ToDo</Link>
-            <Link to="/todo_x">ToDo_X</Link>
-            <Link to="/users">Users</Link>
+            <NavLink to="/" exact activeClassName={Style.navActive}>Blog</NavLink>
+            <NavLink to="/users" activeClassName={Style.navActive}>Users</NavLink>
+            <NavLink to="/todo" activeClassName={Style.navActive}>ToDo</NavLink>
+            <NavLink to="/todo_x" activeClassName={Style.navActive}>ToDo_X</NavLink>
           </nav>
         </div>
         <div className={Style.side_bottom}>
