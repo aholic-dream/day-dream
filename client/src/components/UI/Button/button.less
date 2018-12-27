@@ -1,5 +1,4 @@
 .myButtonBase{
-  margin: 0 1rem;
   box-sizing: border-box;
   overflow: hidden;
   display: inline-block;
@@ -153,4 +152,21 @@
 }
 .do{
   border: dotted 1px currentColor;
+}
+
+
+
+@keyframes rotating {
+  0% {
+      transform: rotateZ(0)
+  }
+  100% {
+      transform: rotateZ(360deg)
+  }
+}
+
+.rotate{
+  display: inline-block;
+  transform: rotateZ(0);
+  animation:rotating 1s linear infinite;
 }

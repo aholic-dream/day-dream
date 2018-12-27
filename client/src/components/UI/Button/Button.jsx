@@ -3,7 +3,7 @@ import style from './button.less';
 import PropTypes from 'prop-types';
 import classnames from 'classnames'
 
-const Button = ({children,size,color,radiu,border,type,...props})=>{
+const Button = ({onClick,children,size,color,radiu,border,type,loading,...props})=>{
   let el,
   className;
   if (type === 'text') {
@@ -12,11 +12,13 @@ const Button = ({children,size,color,radiu,border,type,...props})=>{
     className = classnames(style['myButtonBase'],style[size],style[color],style['add'] )
   }
   let radiuObj ={borderRadius:radiu};
-  el = <button disabled = {(props.disabled)?true:false} className = {className} style = {radiuObj}>
-      <span>
-        {children}
-      </span>
-    </button>
+  let show = (loading)?(<i className={classnames('iconfont',style['rotate'])} >&#xe65d;</i>):(null)
+  el = <button 
+          disabled = {(props.disabled)?true:false} 
+          className = {className}
+          style = {radiuObj}>
+          <span>{show}{children}</span>
+  </button>
   return el
 }
 
@@ -26,6 +28,7 @@ Button.propTypes = {
   size:PropTypes.string,
   color:PropTypes.string,
   radiu:PropTypes.string,
+  loading:PropTypes.bool,
   border:PropTypes.oneOf(['dashed', 'solid','dotted','none'])
 }
 Button.defaultProps = {
@@ -34,7 +37,8 @@ Button.defaultProps = {
   size:'normal',
   color:'blue',
   radiu:'2px',
-  border:'none'
+  border:'none',
+  loading:false
 };
 
 
