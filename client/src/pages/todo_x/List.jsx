@@ -1,8 +1,9 @@
 import React from 'react'
 import TodoItem from './Item.jsx'
-import {connect} from 'react-redux'
-import {getVisibleTodos, toggleTodo} from '../../model/todo_action'
+import { connect } from 'react-redux'
+import { getVisibleTodos, toggleTodo } from '../../model/todo_action'
 import PropTypes from 'prop-types'
+import Style from './style/list.less'
 
 const mapStateToProps = state => ({
   todos: getVisibleTodos(state.todos, state.visibilityFilter)
@@ -12,14 +13,22 @@ const mapDispatchToProps = dispatch => ({
   toggleTodo: id => dispatch(toggleTodo(id))
 })
 
-
-const TodoList = ({todos, toggleTodo}) => (
+const TodoList = ({ todos, toggleTodo }) => (
   <div>
-    <ol>
-      {todos.map(todo => {
-        return <TodoItem key={todo.id} {...todo} onClick={() => {toggleTodo(todo.id)}} />
+    <div className={Style.list}>
+      {todos.map((todo, index) => {
+        return (
+          <TodoItem
+            key={todo.id}
+            index={index}
+            {...todo}
+            onClick={() => {
+              toggleTodo(todo.id)
+            }}
+          />
+        )
       })}
-    </ol>
+    </div>
   </div>
 )
 
@@ -34,4 +43,7 @@ TodoList.propTypes = {
   toggleTodo: PropTypes.func.isRequired
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(TodoList)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(TodoList)

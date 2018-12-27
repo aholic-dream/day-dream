@@ -1,10 +1,40 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Card from '../../components/UI/Card/Card.jsx'
+import { connect } from 'react-redux'
+import { deleTodo, getVisibleTodos, toggleTodo } from '@m/todo_action'
+import { Button } from '@c/UI/Button/index'
+const mapStateToProps = state => ({
+  todos: getVisibleTodos(state.todos, state.visibilityFilter)
+})
+const mapDispatchToProps = dispatch => ({
+  deleTodo: id => dispatch(deleTodo(id)),
+  toggleTodo: id => dispatch(toggleTodo(id))
+})
 
-const TodoItem =({onClick, completed, text}) => (
-  <li onClick={onClick} style={{textDecoration: completed ? 'line-through' : ''}}>
-    {text}
-  </li>
+const TodoItem = ({ index, completed, id, text, deleTodo, toggleTodo }) => (
+  <Card
+    id={index + 1}
+    extra={<a href='#'>Time: 2018-01-03</a>}
+    style={{
+      textDecoration: completed ? 'line-through' : '',
+      margin: '1rem .5rem 0'
+    }}
+  >
+    <div>{text}</div>
+    <div style={{ marginTop: '1rem' }}>
+      <Button color='red' onClick={() => deleTodo(id)}>
+        删除
+      </Button>
+      <Button
+        color='green'
+        style={{ marginLeft: '1rem' }}
+        onClick={() => toggleTodo(id)}
+      >
+        完成
+      </Button>
+    </div>
+  </Card>
 )
 
 TodoItem.propTypes = {
@@ -13,4 +43,7 @@ TodoItem.propTypes = {
   text: PropTypes.string.isRequired
 }
 
-export default TodoItem
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(TodoItem)
