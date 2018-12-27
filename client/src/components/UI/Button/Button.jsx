@@ -3,14 +3,8 @@ import style from './button.less'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
-<<<<<<< HEAD
-const Button = ({onClick,children,size,color,radiu,border,type,loading,...props})=>{
-  let el,
-  className;
-=======
 const Button = ({ children, size, color, radiu, border, type, ...props }) => {
   let el, className
->>>>>>> 3a235d56b00c196fb60ff8965f220d164316d32f
   if (type === 'text') {
     className = classnames(
       style['myButtonBase'],
