@@ -21,10 +21,11 @@ let config = {
   },
   resolve: {
     //拓展不需要加后缀的文件类型
-    extensions: ['.js','.json','jsx'],
+    extensions: ['.js','.json','.jsx'],
     //文件夹别名
     alias: {
-      '@': 'src'
+      '@c': path.resolve(__dirname,'..','src/components/'),
+      '@m': path.resolve(__dirname,'..','src/model/')
     }
   },
   module: {

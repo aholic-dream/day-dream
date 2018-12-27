@@ -1,8 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { addTodo } from '../../model/todo_action'
-import Input from '../../components/UI/Input/index.jsx'
-import {Button} from '../../components/UI/Button/index.js'
+import Input from '@c/UI/Input'
+import {Button} from '@c/UI/Button'
 import Style from './style/AddTodo.less'
 
 const AddTodo = ({ dispatch }) => {
