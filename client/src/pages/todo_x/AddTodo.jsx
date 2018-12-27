@@ -9,11 +9,12 @@ const AddTodo = ({ dispatch }) => {
   let input
   let clickForSubmit = e => {
     e.preventDefault()
-    if (!input.value.trim()) {
+    let dom_input = input.domInput
+    if (!dom_input.value.trim()) {
       return
     }
-    dispatch(addTodo(input.value))
-    input.value = ''
+    dispatch(addTodo(dom_input.value))
+    dom_input.value = ''
   }
 
   return (
@@ -22,7 +23,7 @@ const AddTodo = ({ dispatch }) => {
       <Input
         placeholder='add todo'
         id='addTodo'
-        ref={node => input = node.textInput.current}
+        ref={node => input = node}
       />
       </label>
       <Button onClick={clickForSubmit}>

@@ -6,19 +6,16 @@ class Input extends React.Component {
 
   constructor() {
     super()
-    this.textInput = React.createRef()
+    this.domInput = ''
   }
   saveInput (node) {
-    this.input = node
+    this.domInput = node
   }
   blur () {
-    this.input.blur()
+    this.domInput.blur()
   }
   focus() {
-    this.input.focus()
-  }
-  select() {
-    this.input.select()
+    this.domInput.focus()
   }
   render () {
     const props = this.props
@@ -37,7 +34,7 @@ class Input extends React.Component {
     )
     
     return (
-      <input {...others} type={type} className={classes} ref={this.textInput}/>
+      <input {...others} type={type} className={classes} ref={node => this.saveInput(node)}/>
     )
   }
 }
