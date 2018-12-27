@@ -15,11 +15,11 @@ const mapDispatchToProps = dispatch => ({
 
 const TodoList = ({todos, toggleTodo}) => (
   <div>
-    <ul>
+    <ol>
       {todos.map(todo => {
         return <TodoItem key={todo.id} {...todo} onClick={() => {toggleTodo(todo.id)}} />
       })}
-    </ul>
+    </ol>
   </div>
 )
 

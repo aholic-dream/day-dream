@@ -39,7 +39,7 @@ function todos (todos = [], action) {
   }
 }
 
-const visibilityFilter = (filter = 'SHOW_ALL', action) => {
+const visibilityFilter = (filter = Types.SHOW_ACTIVE, action) => {
   switch (action.type) {
     case Types.SET_VISIBILITY_FILTER:
       return action.filter
