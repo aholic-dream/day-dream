@@ -9,9 +9,19 @@ html, body {
   color: #333;
 
   box-sizing: border-box;
-
   a {
     text-decoration: none;
+    &:link, &:visited {
+      background: #fff;
+      color: #333;
+    }
+    &:hover {
+      background-color: #f5f5f5;
+      color: #3a6efc;
+    }
+    &:active {
+      color: #1251fc;
+    }
   }
 }
 
@@ -23,6 +33,7 @@ html, body {
   url(../assets/iconfont/iconfont.ttf) format('truetype'),
   url(../assets/iconfont/iconfont.svg#iconfont) format('svg');
 }
+
 :global(.iconfont){
   font-family:"iconfont" !important;
   font-size:16px;font-style:normal;

@@ -31,20 +31,18 @@ function toggleTodo (id){
 
 
 // reducer 就是一个纯函数，接收旧的 state 和 action，返回新的 state。
-//1.不要修改 state。 使用 Object.assign() 新建了一个副本,也可以开启对 ES7 提案对象展开运算符的支持, 从而使用 { ...state, ...newState } 达到相同的目的。
-
+//1.不要修改 之前的state 创建副本！。 使用 Object.assign() 新建了一个副本,也可以开启对 ES7 提案对象展开运算符的支持, 从而使用 { ...state, ...newState } 达到相同的目的。
+// .map 也会穿件副本！
 const reducer = function(state = initialState, action) {
   switch (action.type) {
     case TOGGLE_TODO: {
-      let nextState = Object.assign({},state);
-      state.todos.map(todo =>{
-        (todo.id === action.id)
-          ?{...todo,complete : !todo.complete}
-          :todo
-      })
-      return nextState
+      let nextstate = Object.assign({},state);
+      let nexttodos = state.todos.map(todo =>
+        todo.id === action.id ? { ...todo, completed: !todo.completed } : todo
+      )
+      nextstate.todos = nexttodos;
+      return nextstate
     }
-      break;
     default:
       return state;
   }

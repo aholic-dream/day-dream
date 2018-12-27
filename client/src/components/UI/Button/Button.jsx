@@ -1,28 +1,42 @@
 import React from 'react';
-import Style from './button_style.less';
+import style from './button.less';
 import PropTypes from 'prop-types';
-import { normalize } from 'path';
+import classnames from 'classnames'
 
-  const Button = ({children,size,color,radiu,type})=>{
-  let el;
-  let className = `${Style.myButton} ${Style[size]} ${Style[color]}`
+const Button = ({children,size,color,radiu,border,type,...props})=>{
+  let el,
+  className;
+  if (type === 'text') {
+    className = classnames(style['myButtonBase'],style['t'+color],style[size],style[border])
+  } else {
+    className = classnames(style['myButtonBase'],style[size],style[color],style['add'] )
+  }
   let radiuObj ={borderRadius:radiu};
-  return <button className = {className} style = {radiuObj}>{children}</button>
+  el = <button disabled = {(props.disabled)?true:false} className = {className} style = {radiuObj}>
+      <span>
+        {children}
+      </span>
+    </button>
+  return el
 }
 
 Button.propTypes = {
   type: PropTypes.string,
-  children: PropTypes.string,
+  children: PropTypes.node,
   size:PropTypes.string,
   color:PropTypes.string,
-  radiu:PropTypes.string
+  radiu:PropTypes.string,
+  border:PropTypes.oneOf(['dashed', 'solid','dotted','none'])
 }
 Button.defaultProps = {
   type: 'normal',
-  // icon fab normal
   children: 'button',
   size:'normal',
   color:'blue',
-  radiu:'2px'
+  radiu:'2px',
+  border:'none'
 };
+
+
+
 export default Button

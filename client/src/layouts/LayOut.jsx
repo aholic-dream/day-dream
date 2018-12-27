@@ -8,12 +8,13 @@ import Header from '../components/Content/Header/Header.jsx'
 import {Row, Col} from '../components/UI/grid/index.jsx'
 import Avtar from '../components/UI/Avtar/Avtar.jsx'
 import dog from '../assets/dog.jpg'
-import Button from '../components/UI/Button/Button.jsx'
+
 import Badges from '../components/UI/Badges/Badges.jsx'
 import ToDo from '../pages/todo/ToDo.jsx'
 import Todos from '../pages/todo_x/Todo.jsx'
 const About = () => <h2>About</h2>;
-const Blog = () => <h2>Blog</h2>;
+
+import Blog from '../pages/blog/Blog.jsx'
 const Users = () => <h2>Users</h2>;
 
 {/* <React.Fragment></React.Fragment> 空标签，不会生成div */}

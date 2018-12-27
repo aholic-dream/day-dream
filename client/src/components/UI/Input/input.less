@@ -1,3 +1,19 @@
+@text-color : fade(#000, 65%);
+
+@border-color-base : hsv(0, 0, 85%); // base border outline a component
+
+@background-color-light : hsv(0, 0, 98%); // background of header and selected item
+
+// vertical paddings
+@padding-lg : 24px; // containers
+@padding-md : 16px; // small containers and buttons
+@padding-sm : 12px; // Form controls and items
+@padding-xs : 8px; // small items
+
+// vertical padding for all form controls
+@control-padding-horizontal: @padding-sm;
+@control-padding-horizontal-sm: @padding-xs;
+
 @input-height-base : 32px;
 @input-height-lg : 40px;
 @input-height-sm : 24px;
@@ -13,36 +29,40 @@
 @input-border-color : @border-color-base;
 @input-bg : #fff;
 @input-addon-bg : @background-color-light;
-// @input-hover-border-color : @primary-color;
-// @input-disabled-bg : @disabled-bg;
+@blue-6: #1890ff;
+@primary-color: @blue-6;
+@input-hover-border-color : @primary-color;
+@background-color-base : hsv(0, 0, 96%); // Default grey background color
+@input-disabled-bg : @background-color-base;
 @input-outline-offset : 0 0;
 
-
-.input {
-  background: @input-bg;
-  color: @input-color;
-  padding: @input-padding-horizontal;
-
-  &:placeholder {
-    color: @input-placeholder-color;
+:global {
+  .input {
+    background: @input-bg;
+    color: @input-color;
+    padding: @input-padding-horizontal;
+  
+    &:placeholder {
+      color: @input-placeholder-color;
+    }
+  
+    &.small {
+      height: @input-height-sm;
+      padding: @input-padding-vertical-sm @input-padding-horizontal-sm;
+    
+    }
+    
+    &.normal {
+      height: @input-height-base;
+      padding: @input-padding-vertical-base @input-padding-horizontal-base;
+    
+    }
+    
+    &.big {
+      height: @input-height-lg;
+      padding: @input-padding-vertical-lg @input-padding-horizontal-lg;
+    
+    }
   }
-
 }
 
-.small {
-  height: @input-height-sm;
-  padding: @input-padding-horizontal-sm @input-padding-vertical-sm;
-
-}
-
-.normal {
-  height: @input-height-base;
-  padding: @input-padding-horizontal-base @input-padding-vertical-base;
-
-}
-
-.big {
-  height: @input-height-lg;
-  padding: @input-padding-horizontal-lg @input-padding-vertical-lg;
-
-}
