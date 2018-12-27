@@ -3,30 +3,40 @@ import propTypes from 'prop-types'
 import classNames from 'classnames'
 
 class Input extends React.Component {
-  constructor(props) {
-    super(props)
+
+  constructor() {
+    super()
+    this.input = {}
   }
-
-
+  saveInput (node) {
+    this.input = node
+  }
+  blur () {
+    this.input.blur()
+  }
+  focus() {
+    this.input.focus()
+  }
+  select() {
+    this.input.select()
+  }
   render () {
     const props = this.props
     const {
       type = 'text',
       size = 'normal',
       placeholder = '',
-      refs,
       ...others
     } = props
-    console.log(ref)
     const classes = classNames(
-      'input',
+      'x-input',
       {
         [`${size}`]: size
       }
     )
     
     return (
-      <input {...others} type={type} className={classes} placeholder={placeholder} ref={refs}/>
+      <input {...others} type={type} className={classes} ref={() => this.saveInput}/>
     )
   }
 }
@@ -34,7 +44,7 @@ class Input extends React.Component {
 Input.propTypes = {
   placeholder: propTypes.string,
   type: propTypes.string,
-  size: propTypes.oneOf(['small', 'normal', 'big']),
+  size: propTypes.oneOf(['small', 'normal', 'large']),
 }
 
 export default Input

@@ -1,68 +1,31 @@
-@text-color : fade(#000, 65%);
-
-@border-color-base : hsv(0, 0, 85%); // base border outline a component
-
-@background-color-light : hsv(0, 0, 98%); // background of header and selected item
-
-// vertical paddings
-@padding-lg : 24px; // containers
-@padding-md : 16px; // small containers and buttons
-@padding-sm : 12px; // Form controls and items
-@padding-xs : 8px; // small items
-
-// vertical padding for all form controls
-@control-padding-horizontal: @padding-sm;
-@control-padding-horizontal-sm: @padding-xs;
-
-@input-height-base : 32px;
-@input-height-lg : 40px;
-@input-height-sm : 24px;
-@input-padding-horizontal : @control-padding-horizontal - 1px;
-@input-padding-horizontal-base: @input-padding-horizontal;
-@input-padding-horizontal-sm : @control-padding-horizontal-sm - 1px;
-@input-padding-horizontal-lg : @input-padding-horizontal;
-@input-padding-vertical-base : 4px;
-@input-padding-vertical-sm : 1px;
-@input-padding-vertical-lg : 6px;
-@input-placeholder-color : hsv(0, 0, 75%);
-@input-color : @text-color;
-@input-border-color : @border-color-base;
-@input-bg : #fff;
-@input-addon-bg : @background-color-light;
-@blue-6: #1890ff;
-@primary-color: @blue-6;
-@input-hover-border-color : @primary-color;
-@background-color-base : hsv(0, 0, 96%); // Default grey background color
-@input-disabled-bg : @background-color-base;
-@input-outline-offset : 0 0;
-
 :global {
-  .input {
-    background: @input-bg;
-    color: @input-color;
-    padding: @input-padding-horizontal;
-  
-    &:placeholder {
-      color: @input-placeholder-color;
+  .x-input {
+    display: inline-block;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    color: currentColor;
+    transition: border-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    background-color: #fff;
+
+    &.small{
+
+      height: 16px;
+      padding: 6px 8px;
     }
-  
-    &.small {
-      height: @input-height-sm;
-      padding: @input-padding-vertical-sm @input-padding-horizontal-sm;
-    
+    &.normal{
+      font-size: 16px;
+      height: 24px;
+      padding: 10px 12px;
     }
-    
-    &.normal {
-      height: @input-height-base;
-      padding: @input-padding-vertical-base @input-padding-horizontal-base;
-    
+    &.large{
+      font-size: 24px;
+      height: 32px;
+      padding: 14px 16px;
     }
-    
-    &.big {
-      height: @input-height-lg;
-      padding: @input-padding-vertical-lg @input-padding-horizontal-lg;
-    
+    &:focus {
+      box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+      border-color: #80bdff;
     }
   }
 }
-
