@@ -1,12 +1,12 @@
 import React from 'react'
 import propTypes from 'prop-types'
 import classNames from 'classnames'
-
+import Style from './input.less'
 class Input extends React.Component {
 
   constructor() {
     super()
-    this.input = {}
+    this.textInput = React.createRef()
   }
   saveInput (node) {
     this.input = node
@@ -28,15 +28,16 @@ class Input extends React.Component {
       placeholder = '',
       ...others
     } = props
+    console.log(Style[size])
     const classes = classNames(
-      'x-input',
+      Style['input'],
       {
-        [`${size}`]: size
+        [`${Style[size]}`]: size
       }
     )
     
     return (
-      <input {...others} type={type} className={classes} ref={() => this.saveInput}/>
+      <input {...others} type={type} className={classes} ref={this.textInput}/>
     )
   }
 }
@@ -44,7 +45,7 @@ class Input extends React.Component {
 Input.propTypes = {
   placeholder: propTypes.string,
   type: propTypes.string,
-  size: propTypes.oneOf(['small', 'normal', 'large']),
+  size: propTypes.oneOf(['small', 'normal', 'bg']),
 }
 
 export default Input
