@@ -1,11 +1,13 @@
 import React from 'react'
-import {connect} from 'react-redux'
-import {addTodo} from '../../model/todo_action'
+import { connect } from 'react-redux'
+import { addTodo } from '../../model/todo_action'
 import Input from '../../components/UI/Input/index.jsx'
+import {Button} from '../../components/UI/Button/index.js'
+import Style from './style/AddTodo.less'
 
-const AddTodo = ({dispatch}) => {
+const AddTodo = ({ dispatch }) => {
   let input
-  let clickForSubmit  = e => {
+  let clickForSubmit = e => {
     e.preventDefault()
     if (!input.value.trim()) {
       return
@@ -13,11 +15,19 @@ const AddTodo = ({dispatch}) => {
     dispatch(addTodo(input.value))
     input.value = ''
   }
+
   return (
     <form>
-      <label id="addTodo">add todo</label>
-      <Input placeholder="add todo" id="addTodo" refs={node => (input = node)}/>
-      <button type="button" onClick={clickForSubmit}>submit</button>
+      <label id='addTodo' className={Style.label}>add todo：
+      <Input
+        placeholder='add todo'
+        id='addTodo'
+        ref={node => input = node.textInput.current}
+      />
+      </label>
+      <Button onClick={clickForSubmit}>
+        Submit
+      </Button>
     </form>
   )
 }
