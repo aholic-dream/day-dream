@@ -25,7 +25,6 @@ class Input extends React.Component {
       placeholder = '',
       ...others
     } = props
-    console.log(Style[size])
     const classes = classNames(
       Style['input'],
       {
