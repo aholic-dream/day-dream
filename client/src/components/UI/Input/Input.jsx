@@ -23,8 +23,10 @@ class Input extends React.Component {
       type = 'text',
       size = 'normal',
       placeholder = '',
+      id,
       ...others
     } = props
+
     const classes = classNames(
       Style['input'],
       {
@@ -33,7 +35,9 @@ class Input extends React.Component {
     )
     
     return (
-      <input {...others} type={type} className={classes} ref={node => this.saveInput(node)}/>
+      <label htmlFor={id}>
+        <input {...others} id={id} type={type} className={classes} ref={node => this.saveInput(node)}/>
+      </label>
     )
   }
 }
