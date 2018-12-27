@@ -15,14 +15,13 @@ class Sidebar extends Component {
             <p>Everything For Daily Life</p>
           </div>
           <nav className={Style.side_nav}>
-            <NavLink to="/" exact activeClassName={Style.navActive}>Blog</NavLink>
-            <NavLink to="/users" activeClassName={Style.navActive}>Users</NavLink>
-            <NavLink to="/todo" activeClassName={Style.navActive}>ToDo</NavLink>
-            <NavLink to="/todo_x" activeClassName={Style.navActive}>ToDo_X</NavLink>
+            <NavLink to="/app" activeClassName={Style.navActive}>Blog</NavLink>
+            <NavLink to="/app/users" activeClassName={Style.navActive}>Users</NavLink>
+            <NavLink to="/app/todo" activeClassName={Style.navActive}>ToDo</NavLink>
           </nav>
         </div>
-        <div className={Style.side_bottom}>
-          <div className={Style.login}>
+          <div className={Style.side_bottom}>
+            <div className={Style.login}>
             <Button>Welcome To Daily Dream</Button>
           </div>
         </div>

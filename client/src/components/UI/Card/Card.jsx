@@ -29,7 +29,7 @@ class Card extends React.Component {
     return (
       <div className={classes} {...others}>
         <div className={Style.header}>
-          <div className={Style.left}>{id}.</div>
+          <div className={Style.left}>{id}</div>
           {extra ? (
             extra
           ) : (
