@@ -24,7 +24,8 @@ let config = {
     extensions: ['.js','.json','jsx'],
     //文件夹别名
     alias: {
-      '@': 'src'
+      '@c': path.resolve(__dirname, '..', 'src/components'),
+      '@m': path.resolve(__dirname, '..', 'src/model')
     }
   },
   module: {

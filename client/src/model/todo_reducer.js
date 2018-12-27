@@ -24,7 +24,9 @@ function todos (todos = [], action) {
         return item
       })
     case Types.DELE_TODO:
-      return state.todos.splice(() => {
+      let todolist = Object.assign([], todos)
+
+       todolist.splice(() => {
         let index
         todos.some((todo, i) => {
           if (todo.id === item.id) {
@@ -34,6 +36,7 @@ function todos (todos = [], action) {
         })
         return index
       }, 1)
+      return todolist
     default: 
       return todos
   }
