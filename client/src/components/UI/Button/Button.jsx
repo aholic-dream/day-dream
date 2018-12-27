@@ -3,7 +3,7 @@ import style from './button.less'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
-const Button = ({ children, size, color, radiu, border, type, ...props }) => {
+const Button = ({ children, size, color,loading,radiu, border, type, ...props }) => {
   let el, className
   if (type === 'text') {
     className = classnames(
