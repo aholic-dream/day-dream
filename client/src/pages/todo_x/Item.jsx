@@ -31,7 +31,7 @@ const TodoItem = ({ index, completed, id, text, deleTodo, toggleTodo }) => (
         style={{ marginLeft: '1rem' }}
         onClick={() => toggleTodo(id)}
       >
-        完成
+        {completed ? '未完成' : '完成'}
       </Button>
     </div>
   </Card>

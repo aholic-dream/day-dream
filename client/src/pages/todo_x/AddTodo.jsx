@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { addTodo } from '../../model/todo_action'
-import Input from '@c/UI/Input'
+import Input from '@c/UI/Input/index'
 import {Button} from '@c/UI/Button'
 import Style from './style/AddTodo.less'
 
@@ -19,13 +19,14 @@ const AddTodo = ({ dispatch }) => {
 
   return (
     <form>
-      <label id='addTodo' className={Style.label}>add todo：
-      <Input
-        placeholder='add todo'
-        id='addTodo'
-        ref={node => input = node}
-      />
-      </label>
+      <div style={{width: '50%', display: 'inline-block', marginRight: '40px'}}>
+        <Input
+          prefix="Add Todo"
+          placeholder='add todo'
+          id='addTodo'
+          ref={node => input = node}
+        />
+      </div>
       <Button onClick={clickForSubmit}>
         Submit
       </Button>

@@ -30,8 +30,7 @@ class Input extends React.Component {
     this.domInput.focus()
   }
   renderLabel (children) {
-    const { prefix, id, size = 'normal'} = this.props
-    console.log(`${size}-label`)
+    const { prefix, id, size = 'normal', style} = this.props
     if (!('prefix' in this.props)) {
       return children
     }
