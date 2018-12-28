@@ -31,7 +31,7 @@ class Input extends React.Component {
   }
   renderLabel (children) {
     const { prefix, id, size = 'normal'} = this.props
-    console.log(prefix)
+    console.log(`${size}-label`)
     if (!('prefix' in this.props)) {
       return children
     }
