@@ -4,6 +4,8 @@ import Card from '../../components/UI/Card/Card.jsx'
 import { connect } from 'react-redux'
 import { deleTodo, getVisibleTodos, toggleTodo } from '@m/todo_action'
 import { Button } from '@c/UI/Button/index'
+import {Row, Col} from '@c/UI/grid/index'
+
 const mapStateToProps = state => ({
   todos: getVisibleTodos(state.todos, state.visibilityFilter)
 })
@@ -23,16 +25,21 @@ const TodoItem = ({ index, completed, id, text, deleTodo, toggleTodo }) => (
   >
     <div>{text}</div>
     <div style={{ marginTop: '1rem' }}>
-      <Button color='red' onClick={() => deleTodo(id)}>
-        删除
-      </Button>
-      <Button
-        color='green'
-        style={{ marginLeft: '1rem' }}
-        onClick={() => toggleTodo(id)}
-      >
-        {completed ? '未完成' : '完成'}
-      </Button>
+    <Row gutter={24}>
+      <Col span={12}>
+        <Button color='red' onClick={() => deleTodo(id)}>
+          删除
+        </Button>
+      </Col>
+      <Col span={12}>
+        <Button
+          color='green'
+          style={{ marginLeft: '1rem' }}
+          onClick={() => toggleTodo(id)}>
+          {completed ? '未完成' : '完成'}
+        </Button>
+      </Col>
+    </Row>
     </div>
   </Card>
 )

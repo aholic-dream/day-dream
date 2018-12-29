@@ -12,12 +12,11 @@ exports.signup = async function (ctx, next) {
     rePass
   } = ctx.request.body
 
-  if ([loginname, pass, rePass, email].every((item) => {
-      return item === ''
+  if ([loginname, pass, rePass, email].some((item) => {
+      return item === undefined || item === ''
     })) {
     ctx.body = Decorator({
-      code: 2001,
-      message: '信息不完整',
+      message: '字段不全',
       err: 'Prop Invalid'
     })
     return
@@ -33,7 +32,6 @@ exports.signup = async function (ctx, next) {
 
   if (pass.length < 6) {
     ctx.body = Decorator({
-      code: 2001,
       message: '密码长度需 >= 6！',
       err: 'Prop Invalid'
     })
@@ -42,7 +40,6 @@ exports.signup = async function (ctx, next) {
 
   if (pass !== rePass) {
     ctx.body = Decorator({
-      code: 2001,
       message: '两次密码输入不一致',
       err: 'Prop Invalid'
     })
@@ -105,7 +102,7 @@ exports.signin = async function (ctx, next) {
   }
 
   let users = await UserProxy.getUsersByQuery({
-    '$or': [{'loginname': loginname}, {'email': loginname}]
+    '$or': [{'loginname': loginname}]
   }, {})
 
   if (!users) {
@@ -128,7 +125,6 @@ exports.signin = async function (ctx, next) {
         }
       })
     } catch (err) {
-
       ctx.body = Decorator({
         message: '更新Token失败',
         err: err.toString()

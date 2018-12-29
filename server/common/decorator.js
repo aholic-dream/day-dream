@@ -1,4 +1,4 @@
-exports.responseDecorator = function ({code = 2000, message = '', data = null, err = null}) {
+exports.responseDecorator = function ({code = 0, message = '', data = null, err = null}) {
   return {
     code: code,
     message: message,

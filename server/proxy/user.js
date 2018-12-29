@@ -55,6 +55,6 @@ exports.makeAccessToken = function (ctx, user) {
     name: user.loginname,
     email: user.email,
     _id: user._id,
-    exp: Math.floor(Date.now() / 1000) + (30)
+    exp: Math.floor(Date.now() / 1000) + (60 * 60 * 24)
   }, ctx.secret)
 }

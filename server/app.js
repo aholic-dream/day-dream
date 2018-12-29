@@ -13,6 +13,7 @@ const setUserState = require('./middlewares/checkToken').setUserState
 const index = require('./routes/index')
 const users = require('./routes/users')
 const auth = require('./routes/auth')
+const todo = require('./routes/todo')
 
 // error handler
 onerror(app)
@@ -43,6 +44,7 @@ app.use(setUserState)
 app.use(index.routes(), index.allowedMethods())
 app.use(users.routes(), users.allowedMethods())
 app.use(auth.routes(), auth.allowedMethods())
+app.use(todo.routes(), todo.allowedMethods())
 
 // error-handling
 app.on('error', (err, ctx) => {
