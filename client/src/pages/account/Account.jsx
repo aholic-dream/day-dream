@@ -16,9 +16,12 @@ class Account extends React.Component{
     // TODO: this.refs.emailInput.focus()
   }
   render(){
+    let handler = function(){
+      console.log('click')
+    }
     let el = <div className={style.container}>
-      <Card>
-        <header>
+      <Card style={{minWidth:'22rem'}}>
+        <header className={style.header}>
           <Avatar/>
           <p>{(this.state.isSigin)?'Sign in': 'Sign up'}</p>
         </header>
@@ -31,7 +34,7 @@ class Account extends React.Component{
           <Row>
             <Button type='text'>Remember me</Button>
           </Row><Row>
-            <Button color = 'blue'>{`  OK  `}</Button>
+            <Button color = 'blue' onClick={handler} style={{minWidth:'7rem'}}>{`  OK  `}</Button>
           </Row>
 
         </form>

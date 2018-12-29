@@ -25,9 +25,8 @@ class Card extends React.Component {
       [Style['card-border']]: border,
       [Style['card-close']]: close
     })
-
     return (
-      <div className={classes} {...others}>
+      <div className={classes} {...others} style = {this.props.style}>
         <div className={Style.header}>
           <div className={Style.left}>{id}</div>
           {extra ? (
