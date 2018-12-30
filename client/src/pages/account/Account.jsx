@@ -30,9 +30,10 @@ class Account extends React.Component{
     let options = {
       method:'POST',
       mode: "no-cors",
-      body:p,
+      body: JSON.stringify(p),
       headers:{"Content-Type":'application/json'}
     }
+
     fetch('/api/auth/signup', options)
     .then(function(response) { 
       console.log(response)

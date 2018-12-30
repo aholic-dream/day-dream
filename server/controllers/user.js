@@ -10,11 +10,13 @@ exports.signup = async function (ctx, next) {
     email,
     pass,
     rePass
-  } = ctx.request.body
+  } = JSON.parse(ctx.request.body)
 
-  if ([loginname, pass, rePass, email].some((item) => {
-      return item === undefined || item === ''
-    })) {
+  let checkedFileds = [loginname, pass, rePass, email].some((item) => {
+    return item === undefined || item === ''
+  })
+  if (checkedFileds) {
+    console.log('ss')
     ctx.body = Decorator({
       message: '字段不全',
       err: 'Prop Invalid'
@@ -90,7 +92,7 @@ exports.signup = async function (ctx, next) {
 }
 
 exports.signin = async function (ctx, next) {
-  let {loginname, pass} = ctx.request.body
+  let {loginname, pass} = JSON.parse(ctx.request.body)
   if ([loginname, pass].every((item) => {
     return item === ''
   })) {

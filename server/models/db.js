@@ -7,8 +7,8 @@ mongoose.connection.on('connected', () => {
   console.log('MongoDB connected success')
 })
 
-mongoose.connection.on('error', () => {
-  console.log('MongoDB connected fail')
+mongoose.connection.on('error', (e) => {
+  console.log('MongoDB connected fail', e)
 })
 
 mongoose.connection.on("disconnected", function () { //监听掉线
