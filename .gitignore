@@ -63,4 +63,5 @@ typings/
 # next.js build output
 .next
 
-/server/config/dev.js
+#comments
+server/config/dev.js
