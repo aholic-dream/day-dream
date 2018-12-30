@@ -36,20 +36,19 @@ const Button = ({
   
   let show = loading ? (
     <i className={classnames('iconfont', style['rotate'])}>&#xe65d;</i>
-  ) : null
-  console.log(props)
+  ) : (null)
+
+  let onclick = (props.onClick)?props.onClick:()=>{};
+
   el = (
     <button
+      {...props}
       disabled={!!props.disabled}
-      onClick = {
+      onClick = { 
         (e)=>{
-          debugger;
-          e.preventDefault();
-          e.stopPropagation();
-          props.onClick()
+          onclick(e)
         }
       }
-      {...props}
       className={className}
       style={styleObj}
     >

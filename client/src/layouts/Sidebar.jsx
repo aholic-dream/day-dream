@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import Style from './Sidebar.less'
+import PropTypes from 'prop-types'; 
 import Button from '../components/UI/Button/Button.jsx'
 class Sidebar extends Component {
-  constructor (props) {
-    super(props)
+  constructor (props, context) {
+    super(props, context)
   }
-
+  myFunction() {
+    console.log(this.context.router.history)
+  }
   render () {
     return (
       <header className={Style.side_container}>
@@ -22,9 +25,11 @@ class Sidebar extends Component {
         </div>
           <div className={Style.side_bottom}>
             <div className={Style.login}>
-              <Link to={`/login`}>
-                <Button>Welcome To Daily Dream</Button>
-              </Link>
+              <NavLink to="/login" >
+                <Button >
+                  Welcome To Daily Dream,Login...
+                </Button>
+              </NavLink>
           </div>
         </div>
       </header>

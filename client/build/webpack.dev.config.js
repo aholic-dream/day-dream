@@ -60,6 +60,14 @@ let config = {
       warnings: true,
       errors: true
     },
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3000',
+        pathRewrite: { '^/api': '' },
+        changeOrigin: true,
+        secure: false, // 接受 运行在 https 上的服务
+      }
+    },
     quiet: true,
     clientLogLevel: "error"
   },
