@@ -16,7 +16,7 @@ exports.addTodo = async function (ctx, next) {
   let {
     content,
     completed
-  } = ctx.request.body
+  } = JSON.parse(ctx.request.body)
 
   if ([content, completed].some(item => {
     return item === undefined || item === ''
@@ -46,7 +46,7 @@ exports.updateTodo = async function (ctx, next) {
 }
 
 exports.deleTodo = async function (ctx, next) {
-  let {id} = ctx.request.body
+  let {id} = JSON.parse(ctx.request.body)
 
   await TodoProxy.getTodo(id, async (err, todo) => {
     if (err) {
