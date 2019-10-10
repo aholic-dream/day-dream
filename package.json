@@ -1,15 +1,22 @@
 {
   "scripts": {
-    "start": "tsc && node dist/app.js"
+    "start": "tsc && node dist/app.js",
+    "build-server": "tslint --project . && tsc",
+    "watch": "cross-env NODE_ENV=development nodemon --watch src/**/* -e ts,tsx --exec ts-node src/app.ts"
   },
   "dependencies": {
     "koa": "^2.8.2",
+    "koa-better-body": "^3.1.2",
+    "koa-logger": "^3.2.1",
     "koa-router": "^7.4.0"
   },
   "devDependencies": {
     "@types/koa": "^2.0.50",
     "@types/koa-router": "^7.0.42",
+    "@types/node": "^12.7.12",
+    "cross-env": "^6.0.3",
     "nodemon": "^1.19.3",
+    "pm2": "^3.5.1",
     "ts-node": "^8.4.1",
     "typescript": "^3.6.3"
   },
