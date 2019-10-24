@@ -1,12 +1,18 @@
 import * as Koa from 'koa'
-import router from './router'
+import User from './router/user'
+import pageNotFoundrouter from './router/pageNotFound'
 const logger = require('koa-logger')
-const KoaBody = require('koa-better-body')
 const app = new Koa()
+const body = require('koa-better-body')
 
 app.use(logger())
-app.use(router.routes()) /*启动路由*/
-app.use(router.allowedMethods())
+app.use(body())
+// 路由
+app.use(User.routes())
+app.use(User.allowedMethods())
+app.use(pageNotFoundrouter.routes())
+app.use(pageNotFoundrouter.allowedMethods())
+
 app.listen(3000)
 
 console.log('Server running on port 3000')

@@ -1,11 +1,9 @@
-import { Context } from 'koa'
-
 import * as Router from 'koa-router'
-const router = new Router({
-  prefix: '/404'
-})
 
-router.all('/', async ctx => {
+const router = new Router()
+router.redirect('/login', 'sign-in', 302)
+
+router.all('/404', async ctx => {
   ctx.status = 404
 
   switch (ctx.accepts('html', 'json')) {
